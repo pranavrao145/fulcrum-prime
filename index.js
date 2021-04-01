@@ -86,8 +86,8 @@ client.on("message", (message) => {
 
     if (command === "translate" || command === "tr") {
         client.commands.get("translate").execute(message, args);
-    } else if (command === "pollingmode" || command === "pm") {
-        client.commands.get("polling_mode").execute(message, args);
+    } else if (command === "polling" || command === "pm") {
+        client.commands.get("polling").execute(message, args);
     } else if (command === "define" || command === "df") {
         client.commands.get("define").execute(message, args);
     } else if (command === "randomwords" || command === "rw") {

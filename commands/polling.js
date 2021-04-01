@@ -1,5 +1,5 @@
 module.exports = {
-  name: "polling_mode",
+  name: "polling",
   alias: ["pm"],
   description: "Gives users the role can-vote to access polling channels.",
   execute(message, args) {
@@ -10,7 +10,7 @@ module.exports = {
 
     if (!args) {
       message.reply(
-        "Invalid syntax! Correct syntax: f!pollingmode {enable/disable}"
+        "Invalid syntax! Correct syntax: f!polling {on/off}"
       );
       return;
     }

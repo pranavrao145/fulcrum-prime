@@ -25,6 +25,7 @@ module.exports = {
                 { name: 'translate {2 letter code of language} {word/phrase}', value: 'Alias: tr\nTranslates given word/phrase to the language specified.' },
                 { name: 'random_numbers {start number} {end number}', value: 'Alias: rn\nPicks a random number in the range specified.' },
                 { name: 'random_words {num}', value: 'Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.' },
+                { name: 'polling {on/off}', value: 'Alias: pm\nOnly admins can use this command. This command will give/take away the can-vote role from users in the server. For this feature to work properly, a can-vote role must exist, and polling channels must be restricted to only those who have the can-vote role.' }
             )
             .setTimestamp()
 
