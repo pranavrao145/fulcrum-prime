@@ -1,0 +1,5 @@
+windows_scripts/**
+node_modules/**
+.idea/**
+.env
+fulcrum-prime.iml
