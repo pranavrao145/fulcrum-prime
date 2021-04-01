@@ -27,7 +27,6 @@ module.exports = {
                 { name: 'random_words {num}', value: 'Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.' },
             )
             .setTimestamp()
-            .setFooter('Some footer text here');
 
 
         channel.send(embed);
