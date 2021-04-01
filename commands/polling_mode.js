@@ -16,7 +16,7 @@ module.exports = {
     }
 
     let action = args[0];
-    let role = message.guild.roles.cache.find((r) => r.name == "can-vote");
+    let role = message.guild.roles.cache.find((r) => r.name === "can-vote");
 
     if (!role) {
       message.reply(

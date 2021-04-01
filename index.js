@@ -99,6 +99,9 @@ client.on("message", (message) => {
     } else if (command === "updatedate" || command === "ud") {
         client.commands.get("update_date").execute(message, client);
     }
+    else if (command === "help" || command === "h") {
+        client.commands.get("help").execute(message)
+    }
 });
 
 
