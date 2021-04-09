@@ -5,6 +5,11 @@ const fs = require("fs");
 client.commands = new Discord.Collection();
 const prefix = "f!";
 const schedule = require("node-schedule");
+const {Client} = require("pg");
+
+const con = new Client({
+    connectionString: process.env.DATABASE_URL
+})
 
 const commandFiles = fs
     .readdirSync("./commands")
@@ -14,6 +19,11 @@ for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
+
+con.connect(err => {
+    if (err) throw err;
+    console.log("Connected to database!")
+})
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -98,8 +108,7 @@ client.on("message", (message) => {
         client.commands.get("update_offline").execute(message, client);
     } else if (command === "updatedate" || command === "ud") {
         client.commands.get("update_date").execute(message, client);
-    }
-    else if (command === "help" || command === "h") {
+    } else if (command === "help" || command === "h") {
         client.commands.get("help").execute(message)
     }
 });
