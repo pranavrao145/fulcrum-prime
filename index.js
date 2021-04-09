@@ -23,10 +23,10 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-con.connect(err => {
-    if (err) throw err;
-    console.log("Connected to database!")
-})
+// con.connect(err => {
+//     if (err) throw err;
+//     console.log("Connected to database!")
+// })
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
