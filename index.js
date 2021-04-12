@@ -113,6 +113,10 @@ client.on("message", (message) => {
         client.commands.get("update_date").execute(message, client);
     } else if (command === "help" || command === "h") {
         client.commands.get("help").execute(message)
+    } else if (command === "clearvoice" || command === "cv") {
+        client.commands.get("clear_voice_channel").execute(message, args)
+    } else if (command === "movevoice" || command === "mv") {
+        client.commands.get("move_voice_channel").execute(message, args)
     }
 });
 
