@@ -8,6 +8,7 @@ module.exports = {
     execute(msg, args) {
         if (!msg.member.hasPermission("ADMINISTRATOR")) {
             msg.reply("sorry, only an administrator can use this command.")
+            return;
         }
 
         if (!args[0]) {
