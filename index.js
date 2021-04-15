@@ -120,7 +120,7 @@ client.on("message", (message) => {
     } else if (command === "movevoice" || command === "mv") {
         client.commands.get("move_voice_channel").execute(message, args)
     } else if (command === "integrate" || command === "ig") {
-        client.commands.get("integrate").execute(message, args, con)
+        client.commands.get("integrate").execute(message, args, con, client)
     } else if (command === "services" || command === "s") {
         client.commands.get("services").execute(message);
     } else if (command === "updatemembercount" || command === "umc") {
