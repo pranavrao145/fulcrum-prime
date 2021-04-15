@@ -9,6 +9,9 @@ const {Client} = require("pg");
 
 const con = new Client({
     connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 })
 
 const commandFiles = fs
