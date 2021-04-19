@@ -18,6 +18,7 @@ module.exports = {
     }
 
     if (args[0] === "channelcount") {
+      // integrating channel count
       let roleFromMention = getRoleFromMention(msg, args[1]);
 
       if (!args[1]) {
@@ -73,12 +74,13 @@ module.exports = {
               msg.reply("channel count channel set successfully.");
               client.commands
                 .get("update_channel_count")
-                .execute(message, client, con);
+                .execute(null, msg, client, con);
             }
           });
         }
       );
     } else if (args[0] === "membercount") {
+      // integrating member count
       let roleFromMention = getRoleFromMention(msg, args[1]);
 
       if (!args[1]) {
@@ -134,12 +136,13 @@ module.exports = {
               msg.reply("member count channel set successfully.");
               client.commands
                 .get("update_member_count")
-                .execute(message, client, con);
+                .execute(null, msg, client, con);
             }
           });
         }
       );
     } else if (args[0] === "offlinerole") {
+      // integrating offline role
       let guild = msg.guild;
 
       let offline_role = guild.roles.cache.find(
@@ -234,6 +237,7 @@ module.exports = {
               throw err;
             } else {
               msg.reply("date channel set successfully.");
+              client.commands.get("update_date").execute(msg, client, con);
             }
           });
         }

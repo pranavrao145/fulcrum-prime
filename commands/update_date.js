@@ -2,7 +2,7 @@ module.exports = {
     name: "update_date",
     alias: ["ud"],
     description: "Update the date in the date voice channel.",
-    execute: function (message = null, client, con) {
+    execute(message = null, client, con) {
         const months = [
             "Jan",
             "Feb",

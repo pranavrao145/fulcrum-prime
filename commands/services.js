@@ -24,18 +24,18 @@ module.exports = {
                 },
                 {
                     name: 'Offline Roles',
-                    value: 'Admins can run f!integrate offlinerole to create an offline role, which Fulcrum will automatically assign to people who are offline or invisible. This means you can @ everyone who is offline using @offline. Although the process is automatic, admins can force-update everyone\'s offline roles using f!updateoffline.'
+                    value: 'Admins can run f!integrate offlinerole to create an offline role, which Fulcrum will automatically assign to people who are offline or invisible. This means you can @ everyone who is offline using @offline. Although the process is automatic, admins can force-update everyone\'s offline roles using f!update offlineroles.'
                 },
                 {
                     name: 'Date Channel',
-                    value: 'Admins can run f!integrate datechannel {voice_channel_role} to set this feature up. If this is done, every day, Fulcrum will automatically update the name of the channel associated with the role specified everyday to reflect the current date in EST. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a date update using f!updatedate. **NOTE: run "f!integrate vcroles" just before setting this feature up.**'
+                    value: 'Admins can run f!integrate datechannel {voice_channel_role} to set this feature up. If this is done, every day, Fulcrum will automatically update the name of the channel associated with the role specified everyday to reflect the current date in EST. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a date update using f!update datechannel. **NOTE: recommended to run "f!integrate vcroles" just before setting this feature up.**'
                 },
                 {
                     name: 'Member Count Channel',
-                    value: 'Admins can run f!integrate membercount {voice_channel_role} to set this feature up. If this is done, Fulcrum will automatically update the name of the channel associated with the role specified to reflect the number of members currently in your server. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a date update using f!updatemembercount. **NOTE: run "f!integrate vcroles" just before setting this feature up.**'
+                    value: 'Admins can run f!integrate membercount {voice_channel_role} to set this feature up. If this is done, Fulcrum will automatically update the name of the channel associated with the role specified to reflect the number of members currently in your server. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a member count update using f!update membercount. **NOTE: recommended to run "f!integrate vcroles" just before setting this feature up.**'
                 }, {
                     name: 'Channel Count Channel',
-                    value: 'Admins can run f!integrate channelcount {voice_channel_role} to set this feature up. If this is done, Fulcrum will automatically update the name of the channel associated with the role specified to reflect the number of channels in your server. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a date update using f!updatedate. **NOTE: run "f!integrate vcroles" just before setting this feature up.**'
+                    value: 'Admins can run f!integrate channelcount {voice_channel_role} to set this feature up. If this is done, Fulcrum will automatically update the name of the channel associated with the role specified to reflect the number of channels in your server. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a channel count update using f!update channelcount. **NOTE: recommended to run "f!integrate vcroles" just before setting this feature up.**'
                 },
             )
             .setTimestamp()

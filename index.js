@@ -40,7 +40,7 @@ client.on("ready", () => {
 
     client.commands.get("update_date").execute(null, client, con);
     client.commands.get("update_offline").execute(null, client);
-    client.commands.get("update_member_count").execute(null, client, con);
+    client.commands.get("update_member_count").execute(null, null, client, con);
     client.commands.get("update_channel_count").execute(null, null, client, con);
 
 });
@@ -109,10 +109,6 @@ client.on("message", (message) => {
         client.commands.get("random_words").execute(message, args);
     } else if (command === "randomnumber" || command === "rn") {
         client.commands.get("random_number").execute(message, args);
-    } else if (command === "updateoffline" || command === "uo") {
-        client.commands.get("update_offline").execute(message, client);
-    } else if (command === "updatedate" || command === "ud") {
-        client.commands.get("update_date").execute(message, client, con);
     } else if (command === "help" || command === "h") {
         client.commands.get("help").execute(message)
     } else if (command === "clearvoice" || command === "cv") {
@@ -123,10 +119,8 @@ client.on("message", (message) => {
         client.commands.get("integrate").execute(message, args, con, client)
     } else if (command === "services" || command === "s") {
         client.commands.get("services").execute(message);
-    } else if (command === "updatemembercount" || command === "umc") {
-        client.commands.get("update_member_count").execute(message, client, con);
-    } else if (command === "updatechannelcount" || command === "ucc") {
-        client.commands.get("update_channel_count").execute(null, message, client, con);
+    } else if (command === "update" || command === "ud") {
+        client.commands.get("update").execute(message, args, client, con);
     }
 });
 
@@ -147,12 +141,12 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
 
 })
 
-client.on("guildMemberAdd", () => {
-    client.commands.get("update_member_count").execute(null, client, con);
+client.on("guildMemberAdd", (channel) => {
+    client.commands.get("update_member_count").execute(channel.guild, null, client, con);
 })
 
-client.on("guildMemberRemove", () => {
-    client.commands.get("update_member_count").execute(null, client, con);
+client.on("guildMemberRemove", (channel) => {
+    client.commands.get("update_member_count").execute(channel.guild, null, client, con);
 })
 
 
