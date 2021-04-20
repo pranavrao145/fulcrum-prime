@@ -17,7 +17,7 @@ module.exports = {
                     value: 'My prefix is **f!**. \nYou can use any command specified below with this prefix.'
                 },
                 {name: '\u200B', value: '\u200B'},
-                {name: 'SERVICES', value: "List of services offered by Fulcrum."},
+                {name: 'SERVICES', value: "List of services offered by Fulcrum:"},
                 {
                     name: 'Voice Channel Roles',
                     value: 'Admins can run "f!integrate vcroles" to set up voice channel roles. If anyone joins a voice channel, Fulcrum will give them a role with the same name as that voice channel. This means you can @ everyone in a voice channel by mentioning the name of that voice channel.'
