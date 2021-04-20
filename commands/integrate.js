@@ -167,17 +167,20 @@ module.exports = {
         .forEach((vc) => {
           let vc_role = guild.roles.cache.find((r) => r.name === vc.name);
 
-          if (!vc_role) {
-            guild.roles
-              .create({
-                data: { name: `${vc.name}` },
-              })
-              .then(() =>
-                console.log(
-                  `Voice channel role for ${vc.name} created successfully`
-                )
-              );
+          if (vc_role) {
+            console.log("Role already exists.");
+            return;
           }
+
+          guild.roles
+            .create({
+              data: { name: `${vc.name}` },
+            })
+            .then(() =>
+              console.log(
+                `Voice channel role for ${vc.name} created successfully`
+              )
+            );
         });
 
       msg.reply(

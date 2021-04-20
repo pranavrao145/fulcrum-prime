@@ -121,7 +121,17 @@ client.on("message", (message) => {
         client.commands.get("services").execute(message);
     } else if (command === "update" || command === "ud") {
         client.commands.get("update").execute(message, args, client, con);
+    } else if (command === "createrole" || command == "cr") {
+        client.commands.get("create_role").execute(message, args);
+    } else if (command === "createroles" || command == "crs") {
+        client.commands.get("create_roles").execute(message, args);
+    } else if (command === "deleterole" || command == "dr") {
+        client.commands.get("delete_roles").execute(message, args);
+    } else if (command === "assign_role" || command == "dr") {
+        client.commands.get("assign_role").execute(message, args);
     }
+
+
 });
 
 
