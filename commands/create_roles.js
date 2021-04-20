@@ -8,7 +8,7 @@ module.exports = {
       return;
     }
 
-    if (!args) {
+    if (args.length == 0) {
       message.reply(
         "invalid syntax! Correct syntax: f!createrole {names_of_roles)}"
       );
@@ -40,7 +40,7 @@ module.exports = {
         })
         .catch((err) => {
           message.reply(
-            "there was an error creating one or more of the roles."
+            "there was an error creating a role, so skipping over it."
           );
           console.log(err);
         });

@@ -48,7 +48,7 @@ module.exports = {
             name: args[0],
           },
         })
-        .then(() => {
+        .then((res) => {
           message.reply(`role ${res.name} created successfully.`);
         })
         .catch((err) => {

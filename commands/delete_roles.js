@@ -10,7 +10,7 @@ module.exports = {
       return;
     }
 
-    if (!args) {
+    if (args.length == 0) {
       message.reply(
         "incorrect syntax! Correct syntax: f!deleteroles {role_mentions (separated by space)}"
       );
@@ -34,7 +34,7 @@ module.exports = {
         })
         .catch((err) => {
           message.reply(
-            "there was an error deleting one or more roles specified, likely because Fulcrum does not have permission to do so."
+            "there was an error deleting a role, likely because Fulcrum does not have permission to do so. Skipping over it for now."
           );
           console.log(err);
         });
