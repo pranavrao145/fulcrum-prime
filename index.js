@@ -42,6 +42,7 @@ client.on("ready", () => {
 
   client.commands.get("update_date").execute(null, client, con);
   client.commands.get("update_offline").execute(null, client);
+  client.commands.get("update_idle").execute(null, client);
   client.commands.get("update_member_count").execute(null, null, client, con);
   client.commands.get("update_channel_count").execute(null, null, client, con);
 });
@@ -56,10 +57,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     );
     if (!role) return;
 
-    if (!newState.member.roles.cache.has(role))
-      newState.member.roles
-        .remove(role)
-        .then(() => "Removed voice channel role from user.");
+    newState.member.roles
+      .remove(role)
+      .then(() => "Removed voice channel role from user.");
   } else {
     // gets new channel
     const testChannel = newState.guild.channels.cache.find(
@@ -70,10 +70,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       const old_role = newState.guild.roles.cache.find(
         (r) => r.name === oldState.channel.name
       );
-      if (!newState.member.roles.cache.has(old_role))
-        newState.member.roles
-          .remove(old_role)
-          .then(() => "Removed voice channel role from user.");
+      newState.member.roles
+        .remove(old_role)
+        .then(() => "Removed voice channel role from user.");
       const new_role = newState.guild.roles.cache.find(
         (r) => r.name === newState.channel.name
       );
@@ -82,10 +81,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
         return;
       }
 
-      if (!newState.member.roles.cache.has(new_role))
-        newState.member.roles
-          .add(new_role)
-          .then(() => "Added voice channel role to user.");
+      newState.member.roles
+        .add(new_role)
+        .then(() => "Added voice channel role to user.");
     }
     // if the user is not coming from an old channel, adds new role from new channel
     if (newState.channelID === testChannel.id && !oldState.channel) {
@@ -94,10 +92,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       );
       if (!new_role) return;
 
-      if (!newState.member.roles.cache.has(new_role))
-        newState.member.roles
-          .add(new_role)
-          .then(() => "Added voice channel role to user.");
+      newState.member.roles
+        .add(new_role)
+        .then(() => "Added voice channel role to user.");
     }
   }
 });
@@ -145,25 +142,54 @@ client.on("message", (message) => {
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
   let server = newPresence.guild;
+
+  let idle_role = server.roles.cache.find(
+    (role) => role.name.toLowerCase() === "idle"
+  );
   let offline_role = server.roles.cache.find(
     (role) => role.name.toLowerCase() === "offline"
   );
 
-  if (!offline_role) return;
+  if (!(idle_role || offline_role)) return;
 
   let member = newPresence.member;
 
-  if (
-    newPresence.user.presence.status === "offline" ||
-    newPresence.user.presence.status === "invisible"
-  ) {
-    member.roles
-      .add(offline_role)
-      .then(() => console.log("Assigned offline role to user"));
+  if (newPresence.user.presence.status === "idle") {
+    if (offline_role) {
+      member.roles.remove(offline_role).then(() => {
+        console.log("Removed offline role from user.");
+      });
+    }
+
+    if (idle_role) {
+      member.roles.add(idle_role).then(() => {
+        console.log("Added idle role to user.");
+      });
+    }
+  } else if (newPresence.user.presence.status === "offline") {
+    if (idle_role) {
+      member.roles.remove(idle_role).then(() => {
+        console.log("Removed idle role from user.");
+      });
+    }
+
+    if (offline_role) {
+      member.roles.add(offline_role).then(() => {
+        console.log("Added offline role to user.");
+      });
+    }
   } else {
-    member.roles
-      .remove(offline_role)
-      .then(() => console.log("Removed offline role from user"));
+    if (offline_role) {
+      member.roles.remove(offline_role).then(() => {
+        console.log("Removed offline role from user.");
+      });
+    }
+
+    if (idle_role) {
+      member.roles.remove(idle_role).then(() => {
+        console.log("Removed idle role from user.");
+      });
+    }
   }
 });
 

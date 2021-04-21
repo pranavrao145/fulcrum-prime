@@ -18,14 +18,18 @@ module.exports = {
 
     if (args[0] == "datechannel") {
       client.commands.get("update_date").execute(message, client, con);
-    } else if (args[0] == "offlineroles") {
-      client.commands.get("update_offline").execute(message, client);
     } else if (args[0] == "membercount") {
-      client.commands.get("update_member_count").execute(null, message, client, con);
+      client.commands
+        .get("update_member_count")
+        .execute(null, message, client, con);
     } else if (args[0] == "channelcount") {
       client.commands
         .get("update_channel_count")
         .execute(null, message, client, con);
+    } else if (args[0] == "statusroles") {
+      client.commands.get("update_idle").execute(message, client);
+      client.commands.get("update_offline").execute(message, client);
+      message.reply("status roles updated succesfully!");
     } else {
       message.reply(
         "the service provided is invalid! See f!services for a full list of services updatable with this command."

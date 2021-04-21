@@ -49,7 +49,11 @@ module.exports = {
                 },
                 {
                     name: 'createrole {role_name} {color_hex}',
-                    value: 'Alias: cr\nCreates a role with the color specified.'
+                    value: 'Alias: cr\nCreates a role with the color specified. This only works when you want to create a role with one word in the name.'
+                },
+                {
+                    name: 'createroles {role_names}',
+                    value: 'Alias: crs\nCreates a role for each argument. This only works when you want to create roles with one word in the name.'
                 },
                 {
                     name: 'deleterole {list_of_role_mentions}',

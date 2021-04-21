@@ -10,20 +10,19 @@ module.exports = {
             }
 
             let guild = message.guild;
-            let offline_role = guild.roles.cache.find(role => role.name === "offline" || role.name === "Offline");
+            let offline_role = guild.roles.cache.find(role => role.name.toLowerCase() === "offline");
 
             if (!offline_role) {
-                message.reply("sorry, an offline role must exist to use this feature.")
                 return;
             } else {
                 guild.members.cache.forEach(member => {
-                    if (member.presence.status === "offline" || member.presence.status === "invisible") {
+                    if (member.presence.status === "offline") {
                         member.roles.add(offline_role);
                     } else {
                         member.roles.remove(offline_role);
                     }
                 })
-                message.reply("offline statuses updated successfully.")
+                console.log("Offline roles updated succesfully.");
                 return;
             }
         }
@@ -36,7 +35,7 @@ module.exports = {
 
             if (offline_role) {
                 guild.members.cache.forEach(member => {
-                    if (member.presence.status === "offline" || member.presence.status === "invisible") {
+                    if (member.presence.status === "offline") {
                         member.roles.add(offline_role);
                     } else {
                         member.roles.remove(offline_role);
@@ -44,5 +43,6 @@ module.exports = {
                 })
             }
         })
+        console.log("All servers' offline roles updated succesfully.");
     }
 }
