@@ -22,7 +22,7 @@ module.exports = {
                         member.roles.remove(offline_role);
                     }
                 })
-                console.log("Offline roles updated succesfully.");
+                console.log("Offline roles updated successfully.");
                 return;
             }
         }
@@ -43,6 +43,6 @@ module.exports = {
                 })
             }
         })
-        console.log("All servers' offline roles updated succesfully.");
+        console.log("All servers' offline roles updated successfully.");
     }
 }

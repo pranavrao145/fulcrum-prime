@@ -25,7 +25,7 @@ module.exports = {
             member.roles.remove(idle_role);
           }
         });
-        console.log("All servers' idle roles updated succesfully.");
+        console.log("All servers' idle roles updated successfully.");
         return;
       }
     }
@@ -48,6 +48,6 @@ module.exports = {
         });
       }
     });
-    console.log("All servers' idle roles updated succesfully.");
+    console.log("All servers' idle roles updated successfully.");
   },
 };

@@ -29,7 +29,7 @@ module.exports = {
     } else if (args[0] == "statusroles") {
       client.commands.get("update_idle").execute(message, client);
       client.commands.get("update_offline").execute(message, client);
-      message.reply("status roles updated succesfully!");
+      message.reply("status roles updated successfully!");
     } else {
       message.reply(
         "the service provided is invalid! See f!services for a full list of services updatable with this command."
