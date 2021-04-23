@@ -12,7 +12,7 @@ module.exports = {
 
     if (!args[0]) {
       msg.reply(
-        "incorrect syntax! Correct syntax: f!integrate {service_command} {mention/role}. See f!services for a full list of services Fulcrum offers."
+        "incorrect syntax! Correct syntax: f!integrate [service_command] [mention/role]. See f!services for a full list of services Fulcrum offers."
       );
       return;
     }
@@ -23,14 +23,14 @@ module.exports = {
 
       if (!args[1]) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
@@ -42,7 +42,7 @@ module.exports = {
 
       if (!voice_channel) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
@@ -85,14 +85,14 @@ module.exports = {
 
       if (!args[1]) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
@@ -104,7 +104,7 @@ module.exports = {
 
       if (!voice_channel) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
@@ -212,14 +212,14 @@ module.exports = {
 
       if (!args[1]) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
@@ -231,7 +231,7 @@ module.exports = {
 
       if (!voice_channel) {
         msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel {voice_channel_role}"
+          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
@@ -268,7 +268,7 @@ module.exports = {
       );
     } else {
       msg.reply(
-        "incorrect syntax! Correct syntax: f!integrate {service_command} {mention/role}. See f!services for a full list of services Fulcrum offers."
+        "incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
       );
     }
   },

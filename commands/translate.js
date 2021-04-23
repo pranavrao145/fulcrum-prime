@@ -9,7 +9,7 @@ module.exports = {
       let text = args.join(" ")
 
       if (!to_lang || !text || to_lang.length !== 2) {
-          msg.reply("invalid syntax! Correct syntax: 'f!translate {language to translate to (2 letter code)} {text}'")
+          msg.reply("invalid syntax! Correct syntax: f!translate [language to translate to (2 letter code)] [text]")
           return;
       }
 

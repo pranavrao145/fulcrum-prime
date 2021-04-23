@@ -12,7 +12,7 @@ module.exports = {
 
         if (args.length == 0) {
             message.reply(
-                "incorrect syntax! Correct syntax: f!clearrole {role_mention}"
+                "incorrect syntax! Correct syntax: f!clearrole [role mention]"
             );
             return;
         }

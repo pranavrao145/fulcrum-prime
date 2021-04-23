@@ -10,7 +10,7 @@ module.exports = {
 
     if (args.length == 0) {
       message.reply(
-        "Invalid syntax! Correct syntax: f!polling {on/off}"
+        "Invalid syntax! Correct syntax: f!polling [on/off]"
       );
       return;
     }

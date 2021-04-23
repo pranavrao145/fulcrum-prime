@@ -10,7 +10,7 @@ module.exports = {
 
     if (!args[0]) {
       message.reply(
-        "invalid syntax! Correct syntax: f!createrole {name_of_role} {#colour_code (optional)}"
+        "invalid syntax! Correct syntax: f!createrole [name of role] [#colour code (optional)]"
       );
       return;
     }

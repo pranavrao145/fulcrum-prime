@@ -11,7 +11,7 @@ module.exports = {
 
     if (!args[0]) {
       message.reply(
-        "invalid syntax! Correct syntax: f!update {service}. See f!services for all possible services updatable with this command."
+        "invalid syntax! Correct syntax: f!update [service]. See f!services for all possible services updatable with this command."
       );
       return;
     }

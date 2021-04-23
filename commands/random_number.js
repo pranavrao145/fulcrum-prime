@@ -6,14 +6,14 @@ module.exports = {
         var starting_num, ending_num;
 
         if (args.length < 2) {
-            msg.reply("invalid syntax. Correct syntax: f!randomnumber {number_start_of_range} {number_end_of_range}")
+            msg.reply("invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]")
             return;
         } else {
             starting_num = Math.ceil(args[0]);
             ending_num = Math.floor(args[1]);
 
             if (isNaN(starting_num) || isNaN(ending_num)) {
-                msg.reply("invalid syntax. Correct syntax: f!randomnumber {number_start_of_range} {number_end_of_range}")
+                msg.reply("invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]")
                 return;
             }
 

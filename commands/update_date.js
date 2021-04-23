@@ -50,7 +50,7 @@ module.exports = {
                 }
 
                 if (!vc) {
-                    message.reply("sorry, date channel feature not set up on this server. An admin can run f!integrate datechannel {voice_channel_role} to set this feature up.")
+                    message.reply("sorry, date channel feature not set up on this server. An admin can run f!integrate datechannel [voice_channel_role] to set this feature up.")
                 } else {
                     let date = new Date();
                     vc.setName(

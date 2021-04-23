@@ -12,7 +12,7 @@ module.exports = {
 
     if (args.length == 0) {
       message.reply(
-        "incorrect syntax! Correct syntax: f!removerole {role_mention} {user_mentions}"
+        "incorrect syntax! Correct syntax: f!removerole [role mention] [user mentions]"
       );
       return;
     }

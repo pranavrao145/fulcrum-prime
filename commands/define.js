@@ -15,7 +15,7 @@ module.exports = {
             })
         }
         else {
-            msg.reply("incorrect syntax! Correct syntax: f!define {word}");
+            msg.reply("incorrect syntax! Correct syntax: f!define [word]");
         }
 
     }

@@ -12,7 +12,7 @@ module.exports = {
 
     if (args.length == 0) {
       message.reply(
-        "incorrect syntax! Correct syntax: f!deleteroles {role_mentions (separated by space)}"
+        "incorrect syntax! Correct syntax: f!deleteroles [role mentions (separated by space)]"
       );
       return;
     }
@@ -22,7 +22,7 @@ module.exports = {
 
       if (!role) {
         message.reply(
-          "could not delete a role because the role supplied was invalid. Please try again."
+          "could not delete a role because the role was invalid. Skipping over it for now."
         );
         return;
       }
@@ -34,7 +34,7 @@ module.exports = {
         })
         .catch((err) => {
           message.reply(
-            "there was an error deleting a role, likely because Fulcrum does not have permission to do so. Skipping over it for now."
+            "there was an error deleting a role. Skipping over it for now."
           );
           console.log(err);
         });

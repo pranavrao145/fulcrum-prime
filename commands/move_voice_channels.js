@@ -12,7 +12,7 @@ module.exports = {
         }
 
         if (!args[0]) {
-            msg.reply("Incorrect syntax! Correct syntax: f!movevoice {from_voice_channel_role} {to_voice_channel_role} ");
+            msg.reply("Incorrect syntax! Correct syntax: f!movevoice [from voice channel role] [to voice channel role] ");
             return;
         } else {
             let fromVoice = args[0];
@@ -38,7 +38,7 @@ module.exports = {
                     msg.reply("no voice channel found associated with one or more of the roles supplied. Ensure you have set up voice channel roles and try again.")
                 }
             } else {
-                msg.reply("Incorrect syntax! Correct syntax: f!movevoice {from_voice_channel_role} {to_voice_channel_role}");
+                msg.reply("Incorrect syntax! Correct syntax: f!movevoice [from voice channel role] [to voice channel role]");
             }
 
         }

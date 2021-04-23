@@ -12,7 +12,7 @@ module.exports = {
         }
 
         if (!args[0]) {
-            msg.reply("Incorrect syntax! Correct syntax: f!clearvoice {voice_channel_role} ");
+            msg.reply("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ");
             return;
         } else {
             let mention = args[0];
@@ -33,7 +33,7 @@ module.exports = {
                     msg.reply("no voice channel found associated with that role. Ensure you have set up voice channel roles and try again.")
                 }
             } else {
-                msg.reply("Incorrect syntax! Correct syntax: f!clearvoice {voice_channel_role} ");
+                msg.reply("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ");
             }
 
         }

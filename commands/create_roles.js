@@ -10,7 +10,7 @@ module.exports = {
 
     if (args.length == 0) {
       message.reply(
-        "invalid syntax! Correct syntax: f!createrole {names_of_roles)}"
+        "invalid syntax! Correct syntax: f!createrole [names of roles]"
       );
       return;
     }
