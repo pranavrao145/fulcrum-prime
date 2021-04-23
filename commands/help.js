@@ -66,6 +66,10 @@ module.exports = {
                 {
                     name: 'removerole {role} {list_of_user_mentions}',
                     value: 'Alias: rr\nRemoves the role specified from all users specified.'
+                },
+                {
+                    name: 'clearroles {role_mentions}',
+                    value: 'Alias: clr\nRemoves the role mentioned from any user that has it.'
                 }
             )
             .setTimestamp()

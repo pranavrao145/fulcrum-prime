@@ -137,6 +137,8 @@ client.on("message", (message) => {
     client.commands.get("assign_role").execute(message, args);
   } else if (command === "removerole" || command == "rr") {
     client.commands.get("remove_role").execute(message, args);
+  } else if (command === "clearroles" || command == "clr") {
+    client.commands.get("clear_roles").execute(message, args);
   }
 });
 
