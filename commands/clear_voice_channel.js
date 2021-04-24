@@ -7,7 +7,7 @@ module.exports = {
 
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.channel.send("sorry, only an administrator can use this command.")
+            message.channel.send("Sorry, only an administrator can use this command.")
             return
         }
 

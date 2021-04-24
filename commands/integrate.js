@@ -177,7 +177,7 @@ module.exports = {
           });
       }
 
-      message.channel.send("status roles created successfully. You can update them at anytime using f!update statusroles")
+      message.channel.send("Status roles created successfully. You can update them at anytime using f!update statusroles")
 
     } else if (args[0] === "vcroles") {
       let guild = message.guild;

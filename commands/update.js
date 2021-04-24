@@ -29,7 +29,7 @@ module.exports = {
     } else if (args[0] == "statusroles") {
       client.commands.get("update_idle").execute(message, client);
       client.commands.get("update_offline").execute(message, client);
-      message.channel.send("status roles updated successfully!");
+      message.channel.send("Status roles updated successfully!");
     } else if (args[0] == "vcroles") {
       client.commands.get("update_vcroles").execute(message, client);
       message.channel.send("voice channel roles updated successfully!");
