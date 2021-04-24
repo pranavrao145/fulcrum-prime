@@ -25,7 +25,7 @@ module.exports = {
       return;
     }
 
-    if (action === "enable") {
+    if (action === "on") {
       message.guild.members.cache
         .array()
         .filter((m) => !m.user.bot)
@@ -34,7 +34,7 @@ module.exports = {
         });
         message.reply("polling mode enabled successfully.");
     }
-    else if (action === "disable") {
+    else if (action === "off") {
         message.guild.members.cache
         .array()
         .filter((m) => !m.user.bot)
