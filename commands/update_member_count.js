@@ -2,13 +2,13 @@ module.exports = {
   name: "update_member_count",
   alias: ["umc"],
   description: "Updates the member count for the server.",
-  execute(guild = null, msg = null, client, con) {
-    if (msg !== null) {
-      if (!msg.member.hasPermission("ADMINISTRATOR")) {
-        msg.reply("sorry, only an administrator can use this command.");
+  execute(guild = null, message = null, client, con) {
+    if (message !== null) {
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+        message.channel.send("Sorry, only an administrator can use this command.");
         return;
       }
-      let guild = msg.guild;
+      let guild = message.guild;
 
       con.query(
         `SELECT *
@@ -29,14 +29,14 @@ module.exports = {
           }
 
           if (!vc) {
-            msg.reply(
+            message.channel.send(
               "sorry, member count channel has not been set up yet. An admin f!integrate membercount [voice_channel_role] to set this feature up."
             );
           } else {
             let count = guild.members.cache.filter((member) => !member.user.bot)
               .size;
             vc.setName(`👥|Member Count: ${count}`);
-            msg.reply("member count updated successfully!");
+            message.channel.send("member count updated successfully!");
           }
         }
       );

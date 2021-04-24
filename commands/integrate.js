@@ -4,44 +4,44 @@ module.exports = {
   alias: ["ig"],
   description: "Command to integrate Fulcrum with various other entities.",
 
-  execute(msg, args, con, client) {
-    if (!msg.member.hasPermission("ADMINISTRATOR")) {
-      msg.reply("sorry, only an administrator can use this command.");
+  execute(message, args, con, client) {
+    if (!message.member.hasPermission("ADMINISTRATOR")) {
+      message.channel.send("Sorry, only an administrator can use this command.");
       return;
     }
 
     if (!args[0]) {
-      msg.reply(
-        "incorrect syntax! Correct syntax: f!integrate [service_command] [mention/role]. See f!services for a full list of services Fulcrum offers."
+      message.channel.send(
+        "Incorrect syntax! Correct syntax: f!integrate [service_command] [mention/role]. See f!services for a full list of services Fulcrum offers."
       );
       return;
     }
 
     if (args[0] === "channelcount") {
-      // integrating channel count let roleFromMention = getRoleFromMention(msg, args[1]);
+      // integrating channel count let roleFromMention = getRoleFromMention(message, args[1]);
 
       if (!args[1]) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
 
-      let guild = msg.guild;
-      let voice_channel = msg.guild.channels.cache.find(
+      let guild = message.guild;
+      let voice_channel = message.guild.channels.cache.find(
         (r) => r.name === roleFromMention.name && r.type === "voice"
       );
 
       if (!voice_channel) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
         );
         return;
       }
@@ -70,40 +70,40 @@ module.exports = {
             if (err) {
               throw err;
             } else {
-              msg.reply("channel count channel set successfully.");
+              message.channel.send("Channel count channel set successfully.");
               client.commands
                 .get("update_channel_count")
-                .execute(null, msg, client, con);
+                .execute(null, message, client, con);
             }
           });
         }
       );
     } else if (args[0] === "membercount") {
       // integrating member count
-      let roleFromMention = getRoleFromMention(msg, args[1]);
+      let roleFromMention = getRoleFromMention(message, args[1]);
 
       if (!args[1]) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
 
-      let guild = msg.guild;
-      let voice_channel = msg.guild.channels.cache.find(
+      let guild = message.guild;
+      let voice_channel = message.guild.channels.cache.find(
         (r) => r.name === roleFromMention.name && r.type === "voice"
       );
 
       if (!voice_channel) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
         );
         return;
       }
@@ -132,17 +132,17 @@ module.exports = {
             if (err) {
               throw err;
             } else {
-              msg.reply("member count channel set successfully.");
+              message.channel.send("member count channel set successfully.");
               client.commands
                 .get("update_member_count")
-                .execute(null, msg, client, con);
+                .execute(null, message, client, con);
             }
           });
         }
       );
     } else if (args[0] === "statusroles") {
       
-      let guild = msg.guild;
+      let guild = message.guild;
 
       let offline_role = guild.roles.cache.find(
         (r) => r.name.toLowerCase() === "offline"
@@ -177,10 +177,10 @@ module.exports = {
           });
       }
 
-      msg.reply("status roles created successfully. You can update them at anytime using f!update statusroles")
+      message.channel.send("status roles created successfully. You can update them at anytime using f!update statusroles")
 
     } else if (args[0] === "vcroles") {
-      let guild = msg.guild;
+      let guild = message.guild;
 
       guild.channels.cache
         .filter((c) => c.type === "voice")
@@ -203,34 +203,34 @@ module.exports = {
             );
         });
 
-      msg.reply(
+      message.channel.send(
         "voice channel roles set up or updated successfully. NOTE: if you have voice channels with the same names as text channels, voice channel roles may not work properly. Recommended to ensure this is not the case."
       );
     } else if (args[0] === "datechannel") {
-      let roleFromMention = getRoleFromMention(msg, args[1]);
+      let roleFromMention = getRoleFromMention(message, args[1]);
 
       if (!args[1]) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
 
       if (!roleFromMention) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
 
-      let guild = msg.guild;
-      let voice_channel = msg.guild.channels.cache.find(
+      let guild = message.guild;
+      let voice_channel = message.guild.channels.cache.find(
         (r) => r.name === roleFromMention.name && r.type === "voice"
       );
 
       if (!voice_channel) {
-        msg.reply(
-          "incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
+        message.channel.send(
+          "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
         );
         return;
       }
@@ -259,21 +259,21 @@ module.exports = {
               if (err) {
                   throw err;
               } else {
-                  msg.reply("date channel set successfully.");
-                  client.commands.get("update_date").execute(msg, client, con);
+                  message.channel.send("date channel set successfully.");
+                  client.commands.get("update_date").execute(message, client, con);
               }
           });
         }
       );
     } else if (args[0] === "polling") {
-        let role = msg.guild.roles.cache.find(r => r.name.toLowerCase() === "can-vote");
+        let role = message.guild.roles.cache.find(r => r.name.toLowerCase() === "can-vote");
 
         if (role) {
             console.log("can-vote role already exists.");
             return;
         }
 
-        msg.guild.roles.create({
+        message.guild.roles.create({
             data: {
                 name: "can-vote"
             } 
@@ -283,11 +283,11 @@ module.exports = {
                 throw err;
             })
 
-        msg.reply("can-vote role created successfully.");
+        message.channel.send("can-vote role created successfully.");
     }
       else {
-          msg.reply(
-              "incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
+          message.channel.send(
+              "Incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
           );
       }
   },

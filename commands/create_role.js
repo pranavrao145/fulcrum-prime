@@ -4,13 +4,13 @@ module.exports = {
   description: "Creates a role with the given name and optional colour.",
   execute(message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) {
-      message.reply("sorry, only an administrator can use this command.");
+      message.channel.send("Sorry, only an administrator can use this command.");
       return;
     }
 
     if (!args[0]) {
-      message.reply(
-        "invalid syntax! Correct syntax: f!createrole [name of role] [#colour code (optional)]"
+      message.channel.send(
+        "Invalid syntax! Correct syntax: f!createrole [name of role] [#colour code (optional)]"
       );
       return;
     }
@@ -22,7 +22,7 @@ module.exports = {
     let role = guild.roles.cache.find((r) => r.name === args[0]);
 
     if (role) {
-      message.reply("could not create role because that role already exists.");
+      message.channel.send("Could not create role because that role already exists.");
       return;
     }
 
@@ -35,10 +35,10 @@ module.exports = {
           },
         })
         .then((res) => {
-          message.reply(`role ${res.name} created successfully.`);
+          message.channel.send(`Role ${res.name} created successfully.`);
         })
         .catch((err) => {
-          message.reply("there was an error creating that role.");
+          message.channel.send("there was an error creating that role.");
           console.log(err);
         });
     } else {
@@ -49,10 +49,10 @@ module.exports = {
           },
         })
         .then((res) => {
-          message.reply(`role ${res.name} created successfully.`);
+          message.channel.send(`Role ${res.name} created successfully.`);
         })
         .catch((err) => {
-          message.reply("there was an error creating that role.");
+          message.channel.send("there was an error creating that role.");
           console.log(err);
         });
     }

@@ -4,18 +4,18 @@ module.exports = {
     name: "define",
     alias: ["df"],
     description: "Define a word.",
-    execute(msg, args) {
+    execute(message, args) {
         if (args[0]) {
             dictionary.getDef(args[0].toLowerCase(), "en", null, (definition) => {
                 if (definition["definition"] != undefined) {
-                    msg.reply("definition of *" + definition["word"] + "* (" + definition["category"] + "): " + definition["definition"]);
+                    message.channel.send("Definition of *" + definition["word"] + "* (" + definition["category"] + "): " + definition["definition"]);
                 } else {
-                    msg.reply("no definition found for *" + definition["word"] + "*. " + "Please check your spelling and try again.")
+                    message.channel.send("No definition found for *" + definition["word"] + "*. " + "Please check your spelling and try again.")
                 }
             })
         }
         else {
-            msg.reply("incorrect syntax! Correct syntax: f!define [word]");
+            message.channel.send("Incorrect syntax! Correct syntax: f!define [word]");
         }
 
     }

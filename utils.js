@@ -1,4 +1,4 @@
-function getRoleFromMention(msg, mention) {
+function getRoleFromMention(message, mention) {
     if (!mention) return;
 
     if (mention.startsWith('<@') && mention.endsWith('>')) {
@@ -8,11 +8,11 @@ function getRoleFromMention(msg, mention) {
             mention = mention.slice(1);
         }
 
-        return msg.guild.roles.cache.get(mention);
+        return message.guild.roles.cache.get(mention);
     }
 }
 
-function getUserFromMention(msg, mention) {
+function getUserFromMention(message, mention) {
 	if (!mention) return;
 
 	if (mention.startsWith('<@') && mention.endsWith('>')) {
@@ -22,7 +22,7 @@ function getUserFromMention(msg, mention) {
 			mention = mention.slice(1);
 		}
 
-		return msg.guild.members.cache.get(mention);
+		return message.guild.members.cache.get(mention);
 	}
 }
 

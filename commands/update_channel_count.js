@@ -2,13 +2,13 @@ module.exports = {
   name: "update_channel_count",
   alias: ["ucc"],
   description: "Updates the channel count for the server.",
-  execute(guild = null, msg = null, client, con) {
-    if (msg !== null) {
-      if (!msg.member.hasPermission("ADMINISTRATOR")) {
-        msg.reply("sorry, only an administrator can use this command.");
+  execute(guild = null, message = null, client, con) {
+    if (message !== null) {
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+        message.channel.send("Sorry, only an administrator can use this command.");
         return;
       }
-      let guild = msg.guild;
+      let guild = message.guild;
 
       con.query(
         `SELECT *
@@ -29,7 +29,7 @@ module.exports = {
           }
 
           if (!vc) {
-            msg.reply(
+            message.channel.send(
               "sorry, channel count channel has not been set up yet. An admin f!integrate channel [voice_channel_role] to set this feature up."
             );
           } else {
@@ -37,7 +37,7 @@ module.exports = {
               (c) => (c.type === "voice" || c.type === "text") && !c.deleted
             ).size;
             vc.setName(`💬|Channel Count: ${count}`);
-            msg.reply("channel count updated successfully!");
+            message.channel.send("Channel count updated successfully!");
           }
         }
       );

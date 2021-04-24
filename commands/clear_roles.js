@@ -6,13 +6,13 @@ module.exports = {
     description: "Removes the given role from all users that have it.",
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.reply("sorry, only an administrator can use this command.");
+            message.channel.send("Sorry, only an administrator can use this command.");
             return;
         }
 
         if (args.length == 0) {
-            message.reply(
-                "incorrect syntax! Correct syntax: f!clearrole [role mention]"
+            message.channel.send(
+                "Incorrect syntax! Correct syntax: f!clearrole [role mention]"
             );
             return;
         }
@@ -21,7 +21,7 @@ module.exports = {
             let role = getRoleFromMention(message, mention);
 
             if (!role) {
-                message.reply("could not clear a role given, skipping for now.");
+                message.channel.send("Could not clear a role given, skipping for now.");
                 return;
             }
 
@@ -37,11 +37,11 @@ module.exports = {
                 user.roles
                     .remove(role)
                     .then(() => {
-                        message.reply(`the role ${role.name} removed successfully from user ${user.user.tag}`)
+                        message.channel.send(`The role ${role.name} removed successfully from user ${user.user.tag}`)
                     })
                     .catch((err) => {
                         console.log(err);
-                        message.reply("could not clear a role given, skipping for now.");
+                        message.channel.send("Could not clear a role given, skipping for now.");
                         return;
                     });
             });

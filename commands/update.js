@@ -5,13 +5,13 @@ module.exports = {
     "Base command for updating channel count, offline roles, date, and member count.",
   execute(message, args, client, con) {
     if (!message.member.hasPermission("ADMINISTRATOR")) {
-      message.reply("sorry, only an administrator can use this command.");
+      message.channel.send("Sorry, only an administrator can use this command.");
       return;
     }
 
     if (!args[0]) {
-      message.reply(
-        "invalid syntax! Correct syntax: f!update [service]. See f!services for all possible services updatable with this command."
+      message.channel.send(
+        "Invalid syntax! Correct syntax: f!update [service]. See f!services for all possible services updatable with this command."
       );
       return;
     }
@@ -29,13 +29,13 @@ module.exports = {
     } else if (args[0] == "statusroles") {
       client.commands.get("update_idle").execute(message, client);
       client.commands.get("update_offline").execute(message, client);
-      message.reply("status roles updated successfully!");
+      message.channel.send("status roles updated successfully!");
     } else if (args[0] == "vcroles") {
       client.commands.get("update_vcroles").execute(message, client);
-      message.reply("voice channel roles updated successfully!");
+      message.channel.send("voice channel roles updated successfully!");
     }
       else {
-      message.reply(
+      message.channel.send(
         "the service provided is invalid! See f!services for a full list of services updatable with this command."
       );
       return;

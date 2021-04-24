@@ -4,12 +4,12 @@ module.exports = {
   description: "Gives users the role can-vote to access polling channels.",
   execute(message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) {
-      message.reply("sorry, only an administrator can use this command.");
+      message.channel.send("Sorry, only an administrator can use this command.");
       return;
     }
 
     if (args.length == 0) {
-      message.reply(
+      message.channel.send(
         "Invalid syntax! Correct syntax: f!polling [on/off]"
       );
       return;
@@ -19,7 +19,7 @@ module.exports = {
     let role = message.guild.roles.cache.find((r) => r.name === "can-vote");
 
     if (!role) {
-      message.reply(
+      message.channel.send(
         "please create the can-vote role for this command to work."
       );
       return;
@@ -32,7 +32,7 @@ module.exports = {
         .forEach((member) => {
           member.roles.add(role);
         });
-        message.reply("polling mode enabled successfully.");
+        message.channel.send("polling mode enabled successfully.");
     }
     else if (action === "off") {
         message.guild.members.cache
@@ -41,10 +41,10 @@ module.exports = {
         .forEach((member) => {
           member.roles.remove(role);
         });
-        message.reply("polling mode disabled successfully.");
+        message.channel.send("polling mode disabled successfully.");
     }
     else {
-        message.reply("that is not a valid option. Please try again with a valid option.")
+        message.channel.send("that is not a valid option. Please try again with a valid option.")
     }
   },
 };

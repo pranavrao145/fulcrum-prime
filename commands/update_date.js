@@ -30,7 +30,7 @@ module.exports = {
 
         if (message !== null) {
             if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command.");
+                message.channel.send("Sorry, only an administrator can use this command.");
                 return;
             }
             let guild = message.guild;
@@ -50,7 +50,7 @@ module.exports = {
                 }
 
                 if (!vc) {
-                    message.reply("sorry, date channel feature not set up on this server. An admin can run f!integrate datechannel [voice_channel_role] to set this feature up.")
+                    message.channel.send("sorry, date channel feature not set up on this server. An admin can run f!integrate datechannel [voice_channel_role] to set this feature up.")
                 } else {
                     let date = new Date();
                     vc.setName(
@@ -63,7 +63,7 @@ module.exports = {
                         ", " +
                         date.getFullYear()
                     );
-                    message.reply("date updated successfully.")
+                    message.channel.send("date updated successfully.")
                 }
             })
             return;
