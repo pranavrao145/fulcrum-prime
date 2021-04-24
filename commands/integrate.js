@@ -18,8 +18,7 @@ module.exports = {
     }
 
     if (args[0] === "channelcount") {
-      // integrating channel count
-      let roleFromMention = getRoleFromMention(msg, args[1]);
+      // integrating channel count let roleFromMention = getRoleFromMention(msg, args[1]);
 
       if (!args[1]) {
         msg.reply(
@@ -257,19 +256,39 @@ module.exports = {
                              VALUES ('${guild.id}', '${voice_channel.id}')`;
           }
           con.query(query, (err) => {
-            if (err) {
-              throw err;
-            } else {
-              msg.reply("date channel set successfully.");
-              client.commands.get("update_date").execute(msg, client, con);
-            }
+              if (err) {
+                  throw err;
+              } else {
+                  msg.reply("date channel set successfully.");
+                  client.commands.get("update_date").execute(msg, client, con);
+              }
           });
         }
       );
-    } else {
-      msg.reply(
-        "incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
-      );
+    } else if (args[0] === "polling") {
+        let role = msg.guild.roles.cache.find(r => r.name.toLowerCase() === "can-vote");
+
+        if (role) {
+            console.log("can-vote role already exists.");
+            return;
+        }
+
+        msg.guild.roles.create({
+            data: {
+                name: "can-vote"
+            } 
+        }).then(() => {
+                console.log("can-vote role created successfully.");
+            }).catch((err) => {
+                throw err;
+            })
+
+        msg.reply("can-vote role created successfully.");
     }
+      else {
+          msg.reply(
+              "incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
+          );
+      }
   },
 };

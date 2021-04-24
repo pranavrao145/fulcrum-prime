@@ -42,7 +42,7 @@ module.exports = {
         {
           name: "random_words [num]",
           value:
-            "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
+           "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
         },
         { name: "\u200B", value: "\u200B" },
         {
@@ -52,7 +52,7 @@ module.exports = {
         {
           name: "polling [on/off]",
           value:
-            "Alias: pm\nGives/takes away the can-vote role from users in the server. For this feature to work properly, a can-vote role must exist, and polling channels must be restricted to only those who have the can-vote role.",
+            "Alias: pm\nGives/takes away the can-vote role from users in the server. For this feature to work properly, polling mode must be set up (see f!services). ",
         },
         {
           name: "clearvoice [voice channel role]",
@@ -87,7 +87,7 @@ module.exports = {
         {
           name: "removerole [role] [list of user mentions]",
           value:
-            "Alias: rr\nRemoves the role specified from all users specified.",
+            "Aljas: rr\nRemoves the role specified from all users specified.",
         },
         {
           name: "clearroles [role mentions]",

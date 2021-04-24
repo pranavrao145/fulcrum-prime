@@ -40,11 +40,8 @@ client.on("ready", () => {
     client.commands.get("update_date").execute(null, client, con);
   }); // run everyday at midnight
 
-  client.commands.get("update_date").execute(null, client, con);
   client.commands.get("update_offline").execute(null, client);
   client.commands.get("update_idle").execute(null, client);
-  client.commands.get("update_member_count").execute(null, null, client, con);
-  client.commands.get("update_channel_count").execute(null, null, client, con);
 });
 
 client.login(process.env.BOT_TOKEN).then();
