@@ -6,13 +6,13 @@ module.exports = {
   description: "Deletes the given role(s) from the server.",
   execute(message, args) {
     if (!message.member.hasPermission("ADMINISTRATOR")) {
-      message.channel.send("Sorry, only an administrator can use this command.");
+      message.reply("sorry, only an administrator can use this command.");
       return;
     }
 
     if (args.length == 0) {
       message.channel.send(
-        "Incorrect syntax! Correct syntax: f!deleteroles [role mentions (separated by space)]"
+        "Incorrect syntax! Correct syntax: f!deleteroles [list of roles]"
       );
       return;
     }
@@ -22,7 +22,7 @@ module.exports = {
 
       if (!role) {
         message.channel.send(
-          "Could not delete a role because the role was invalid. Skipping over it for now."
+          "Could not delete a role because the role was invalid. Skipping over it."
         );
         return;
       }
@@ -34,7 +34,7 @@ module.exports = {
         })
         .catch((err) => {
           message.channel.send(
-            "There was an error deleting a role. Skipping over it for now."
+            "There was an error deleting a role. Skipping over it."
           );
           console.log(err);
         });

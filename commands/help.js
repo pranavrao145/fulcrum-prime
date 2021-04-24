@@ -36,11 +36,11 @@ module.exports = {
             "Alias: tr\nTranslates given word/phrase to the language specified.",
         },
         {
-          name: "random_numbers [start number] [end number]",
+          name: "randomnumbers [start number] [end number]",
           value: "Alias: rn\nPicks a random number in the range specified.",
         },
         {
-          name: "random_words [num]",
+          name: "randomwords [num]",
           value:
            "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
         },
@@ -66,7 +66,7 @@ module.exports = {
             "Alias: mv\nMoves all users in the voice channel associated with the first role to the voice channel associated with the second. For this feature to work properly, voice channel roles must be set up (see f!services). **Note:** attempting to move someone to a voice channel which they do not have permission to access will give them *temporary access* to that channel and still move them. Their access will be revoked upon leaving the voice channel.",
         },
         {
-          name: "createrole [role name] [color_hex]",
+          name: "createrole [role name] [color hex]",
           value:
             "Alias: cr\nCreates a role with the color specified. This only works when you want to create a role with one word in the name.",
         },
@@ -76,24 +76,34 @@ module.exports = {
             "Alias: crs\nCreates a role for each argument. This only works when you want to create roles with one word in the name.",
         },
         {
-          name: "deleterole [list of role mentions]",
+          name: "deleteroles [list of roles]",
           value: "Alias: dr\nDeletes all roles specified.",
         },
         {
-          name: "assignrole [role] [list of user mentions]",
+          name: "assignrole [role] [list of users]",
           value:
             "Alias: ar\nAssigns the role specified to all users specified.",
         },
         {
-          name: "removerole [role] [list of user mentions]",
+          name: "assignroles [user] [list of roles]",
+          value:
+            "Alias: ars\nAssigns all the roles given to the specified user..",
+        },
+        {
+          name: "removerole [role] [list of users]",
           value:
             "Aljas: rr\nRemoves the role specified from all users specified.",
         },
         {
-          name: "clearroles [role mentions]",
+          name: "removeroles [user] [list of roles]",
           value:
-            "Alias: clr\nRemoves the role mentioned from any user that has it.",
-        }
+            "Aljas: rrs\nRemoves all the roles from the user specified.",
+        },
+        {
+          name: "clearroles [list of roles]",
+          value:
+            "Alias: clr\nFor each role give, removes the role from any user that has it.",
+        },
       )
       .setTimestamp();
 

@@ -129,7 +129,7 @@ client.on("message", (message) => {
     client.commands.get("create_role").execute(message, args);
   } else if (command === "createroles" || command == "crs") {
     client.commands.get("create_roles").execute(message, args);
-  } else if (command === "deleterole" || command == "dr") {
+  } else if (command === "deleteroles" || command == "dr") {
     client.commands.get("delete_roles").execute(message, args);
   } else if (command === "assignrole" || command == "ar") {
     client.commands.get("assign_role").execute(message, args);
@@ -137,6 +137,10 @@ client.on("message", (message) => {
     client.commands.get("remove_role").execute(message, args);
   } else if (command === "clearroles" || command == "clr") {
     client.commands.get("clear_roles").execute(message, args);
+  } else if (command === "assignroles" || command === "ars") {
+    client.commands.get("assign_roles").execute(message, args);
+  } else if (command === "removeroles" || command === "rrs") {
+    client.commands.get("remove_roles").execute(message, args);
   }
 });
 

@@ -6,7 +6,7 @@ module.exports = {
     description: "Removes the given role from all users that have it.",
     execute(message, args) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.channel.send("Sorry, only an administrator can use this command.");
+            message.reply("sorry, only an administrator can use this command.");
             return;
         }
 
@@ -21,7 +21,7 @@ module.exports = {
             let role = getRoleFromMention(message, mention);
 
             if (!role) {
-                message.channel.send("Could not clear a role given, skipping for now.");
+                message.channel.send("Could not clear a role given, Skipping over it.");
                 return;
             }
 
@@ -41,7 +41,7 @@ module.exports = {
                     })
                     .catch((err) => {
                         console.log(err);
-                        message.channel.send("Could not clear a role given, skipping for now.");
+                        message.channel.send("Could not clear a role given, Skipping over it.");
                         return;
                     });
             });

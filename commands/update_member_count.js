@@ -5,7 +5,7 @@ module.exports = {
   execute(guild = null, message = null, client, con) {
     if (message !== null) {
       if (!message.member.hasPermission("ADMINISTRATOR")) {
-        message.channel.send("Sorry, only an administrator can use this command.");
+        message.reply("sorry, only an administrator can use this command.");
         return;
       }
       let guild = message.guild;
