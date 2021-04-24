@@ -41,6 +41,7 @@ client.on("ready", () => {
   }); // run everyday at midnight
 
   client.commands.get("update_offline").execute(null, client);
+  client.commands.get("update_vcroles").execute(null, client);
   client.commands.get("update_idle").execute(null, client);
 });
 

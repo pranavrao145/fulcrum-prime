@@ -24,7 +24,7 @@ module.exports = {
         {
           name: "Voice Channel Roles",
           value:
-            'Admins can run "f!integrate vcroles" to set up voice channel roles. If anyone joins a voice channel, Fulcrum will give them a role with the same name as that voice channel. This means you can @ everyone in a voice channel by mentioning the name of that voice channel.',
+            'Admins can run "f!integrate vcroles" to set up voice channel roles. If anyone joins a voice channel, Fulcrum will give them a role with the same name as that voice channel. This means you can @ everyone in a voice channel by mentioning the name of that voice channel. While this process is automatic, admins can force-update everyone\'s voice channel roles by running f!update vcroles.',
         },
         { name: "Status Roles",
           value:

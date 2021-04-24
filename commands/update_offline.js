@@ -28,7 +28,7 @@ module.exports = {
         }
 
         const Guilds = client.guilds.cache.map(guild => guild.id);
-
+        
         Guilds.forEach((element) => {
             let guild = client.guilds.cache.get(element);
             let offline_role = guild.roles.cache.find(role => role.name === "offline" || role.name === "Offline");

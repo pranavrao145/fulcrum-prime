@@ -20,7 +20,7 @@ module.exports = {
       client.commands.get("update_date").execute(message, client, con);
     } else if (args[0] == "membercount") {
       client.commands
-        .get("update_member_count")
+       .get("update_member_count")
         .execute(null, message, client, con);
     } else if (args[0] == "channelcount") {
       client.commands
@@ -30,7 +30,11 @@ module.exports = {
       client.commands.get("update_idle").execute(message, client);
       client.commands.get("update_offline").execute(message, client);
       message.reply("status roles updated successfully!");
-    } else {
+    } else if (args[0] == "vcroles") {
+      client.commands.get("update_vcroles").execute(message, client);
+      message.reply("voice channel roles updated successfully!");
+    }
+      else {
       message.reply(
         "the service provided is invalid! See f!services for a full list of services updatable with this command."
       );
