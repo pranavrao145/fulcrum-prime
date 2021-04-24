@@ -28,7 +28,7 @@ module.exports = {
                     channel.members.forEach(mem => {
                         mem.voice.setChannel(null);
                     })
-                    message.channel.send("voice channel cleared successfully.");
+                    message.channel.send("Voice channel cleared successfully.");
                 } else {
                     message.channel.send("No voice channel found associated with that role. Ensure you have set up voice channel roles and try again.")
                 }

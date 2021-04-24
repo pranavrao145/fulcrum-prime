@@ -32,7 +32,7 @@ module.exports = {
       message.channel.send("Status roles updated successfully!");
     } else if (args[0] == "vcroles") {
       client.commands.get("update_vcroles").execute(message, client);
-      message.channel.send("voice channel roles updated successfully!");
+      message.channel.send("Voice channel roles updated successfully!");
     }
       else {
       message.channel.send(
