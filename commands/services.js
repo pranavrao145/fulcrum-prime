@@ -10,6 +10,7 @@ module.exports = {
     let channel = message.channel;
 
     const embed = new Discord.MessageEmbed()
+      .setColor("#FFFCF4")
       .setTitle("Fulcrum Prime - Services")
       .setDescription("A breakdown of all the services offered by Fulcrum.")
       .addFields(
