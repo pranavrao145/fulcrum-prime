@@ -38,9 +38,8 @@ module.exports = {
                 member.roles.add(role).then(() => {
                     message.channel.send(`Role ${role.name} successfully added to ${member.user.tag}`);            
                 }).catch((err) => {
-                    // message.channel.send("There was an error in adding a role. Please try again.");
-                    // console.log(err);
-                    throw err;
+                    message.channel.send("There was an error in adding a role. Please try again.");
+                    console.log(err);
                 });
             });
         } catch (e) {
