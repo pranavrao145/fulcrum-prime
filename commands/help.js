@@ -87,7 +87,7 @@ module.exports = {
         {
           name: "assignroles [user] [list of roles]",
           value:
-            "Alias: ars\nAssigns all the roles given to the specified user..",
+            "Alias: ars\nAssigns all the roles given to the specified user.",
         },
         {
           name: "removerole [role] [list of users]",

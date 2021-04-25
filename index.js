@@ -33,6 +33,10 @@ client.on("ready", () => {
   client.user
     .setPresence({
       status: "online",
+      activity: {
+        name: "f!help",
+        type: "WATCHING",
+      },
     })
     .then((r) => console.log(r));
 
@@ -98,9 +102,14 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
+  if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
+    return;
 
-  const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/);
+  const args = message.content
+    .toLowerCase()
+    .slice(prefix.length)
+    .trim()
+    .split(/ +/);
   const command = args.shift().toLowerCase();
 
   if (command === "translate" || command === "tr") {
