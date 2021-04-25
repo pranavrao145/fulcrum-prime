@@ -3,6 +3,7 @@ module.exports = {
     alias: ["rn"],
     description: "Provide a random number within the specified range.",
     execute(message, args) {
+        try {
         var starting_num, ending_num;
 
         if (args.length < 2) {
@@ -20,6 +21,9 @@ module.exports = {
             const random_num = Math.floor((Math.random() * ending_num) + starting_num);
 
             message.channel.send("here is your random number from " + starting_num + " to " + ending_num + ": " + random_num);
+        }
+        } catch (e) {
+            return;
         }
     }
 }

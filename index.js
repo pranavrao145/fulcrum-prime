@@ -150,6 +150,8 @@ client.on("message", (message) => {
     client.commands.get("assign_roles").execute(message, args);
   } else if (command === "removeroles" || command === "rrs") {
     client.commands.get("remove_roles").execute(message, args);
+  } else if (command === "start") {
+    client.commands.get("start").execute(message, args);
   }
 });
 
@@ -229,3 +231,11 @@ client.on("channelDelete", (channel) => {
     .get("update_channel_count")
     .execute(channel.guild, null, client, con);
 });
+
+client.on("guildCreate", (guild) => {
+    let channel = guild.systemChannel;
+
+    channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");
+        
+    client.commands.get("start").execute(channel);
+})
