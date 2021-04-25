@@ -2,7 +2,7 @@ module.exports = {
     name: "update_offline",
     alias: ["uo"],
     description: "Give people that are offline the offline role, and remove the offline role from people that are online.", execute(message = null, client) {
-        try {
+        
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
                     message.reply("sorry, only an administrator can use this command.");
@@ -52,8 +52,6 @@ module.exports = {
                 }
             })
             console.log("All servers' offline roles updated successfully.");
-        } catch (e) {
-            return;
-        }
+
     }
 }

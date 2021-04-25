@@ -5,7 +5,7 @@ module.exports = {
     description: "Command to integrate Fulcrum with various other entities.",
 
     execute(message, args, con, client) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -161,7 +161,7 @@ module.exports = {
                         .then(() => console.log("Offline role created successfully."))
                         .catch((err) => {
                             message.channel.send("Sorry, there was an error in creating an idle role.");
-                            console.log(err);
+                            
                         });
                 }
 
@@ -176,7 +176,7 @@ module.exports = {
                         .then(() => console.log("Idle role created successfully."))
                         .catch((err) => {
                             message.channel.send("Sorry, there was an error in creating an idle role.");
-                            console.log(err);
+                            
                         });
                 }
 
@@ -293,8 +293,6 @@ module.exports = {
                     "Incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
                 );
             }
-        } catch (e) {
-            return;
-        }
+
     },
 };

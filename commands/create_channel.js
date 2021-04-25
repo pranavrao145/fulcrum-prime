@@ -5,7 +5,7 @@ module.exports = {
     alias: ["cc"],
     description: "Creates a channel given a channel name, type, and category.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply(
                     "sorry, only an administrator can use this command."
@@ -48,8 +48,6 @@ module.exports = {
                 .catch((err) => {
                     throw err;
                 });
-        } catch (e) {
-            return;
-        }
+
     },
 };

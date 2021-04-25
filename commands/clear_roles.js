@@ -5,7 +5,7 @@ module.exports = {
     alias: ["clr"],
     description: "Removes the given role from all users that have it.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command."); return;
             }
@@ -40,14 +40,12 @@ module.exports = {
                             message.channel.send(`The role ${role.name} removed successfully from user ${user.user.tag}`)
                         })
                         .catch((err) => {
-                            console.log(err);
+                            
                             message.channel.send("Could not clear a role given, Skipping over it.");
                             return;
                         });
                 });
             });
-        } catch (e) {
-            return;
-        }
+
     },
 };

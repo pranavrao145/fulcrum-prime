@@ -5,7 +5,7 @@ module.exports = {
     alias: ["df"],
     description: "Define a word.",
     execute(message, args) {
-        try {
+        
             if (args[0]) {
                 dictionary.getDef(args[0].toLowerCase(), "en", null, (definition) => {
                     if (definition["definition"] != undefined) {
@@ -18,8 +18,6 @@ module.exports = {
             else {
                 message.channel.send("Incorrect syntax! Correct syntax: f!define [word]");
             }
-        } catch (e) {
-            return;
-        }
+
     }
 }

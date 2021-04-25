@@ -3,7 +3,7 @@ module.exports = {
     alias: ["crs"],
     description: "Creates role(s) with the given name(s).",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -43,11 +43,9 @@ module.exports = {
                         message.channel.send(
                             "There was an error creating a role, so skipping over it."
                         );
-                        console.log(err);
+                        
                     });
             });
-        } catch (e) {
-            return;
-        }
+
     },
 };

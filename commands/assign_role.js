@@ -5,7 +5,7 @@ module.exports = {
     alias: ["ar"],
     description: "Adds the given role to the given user(s).",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -42,12 +42,10 @@ module.exports = {
                     })
                     .catch((err) => {
                         message.channel.send("A user supplied was invalid, so skipping over them.");
-                        console.log(err);
+                        
                         return;
                     });
             });
-        } catch (e) {
-            return;
-        }
+
     }
 };

@@ -6,7 +6,7 @@ module.exports = {
     description: "Admin command that can clear the voice channel",
 
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.")
                 return
@@ -37,8 +37,6 @@ module.exports = {
                     message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ");
                 }
             }
-        } catch (e) {
-            return;
-        }
+
     }
 }

@@ -5,7 +5,7 @@ module.exports = {
     alias: ["tr"],
     description: "Translate a sentence.",
     execute(message, args) {
-        try {
+        
             let to_lang = args.shift();
             let text = args.join(" ")
 
@@ -20,8 +20,6 @@ module.exports = {
                 message.channel.send("Sorry, there was an error translating that.")    
             });
 
-        } catch (e) {
-            return;
-        }
+
     }
 }

@@ -4,7 +4,7 @@ module.exports = {
     description:
     "Give people that are idle the idle role, and remove the idle role from others.",
     execute(message = null, client) {
-        try {
+        
 
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -59,8 +59,6 @@ module.exports = {
                 }
             });
             console.log("All servers' idle roles updated successfully.");
-        } catch (e) {
-            return;
-        }
+
     },
 };

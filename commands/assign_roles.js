@@ -5,7 +5,7 @@ module.exports = {
     alias: ["ars"],
     description: "Assigns many roles to one user.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply(
                     "sorry, only an administrator can use this command."
@@ -39,11 +39,9 @@ module.exports = {
                     message.channel.send(`Role ${role.name} successfully added to ${member.user.tag}`);            
                 }).catch((err) => {
                      message.channel.send("There was an error in adding a role. Please try again.");
-                     console.log(err);
+                     
                 });
             });
-        } catch (e) {
-            return;
-        } 
+ 
     },
 };

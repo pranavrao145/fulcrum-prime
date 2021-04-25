@@ -4,7 +4,7 @@ module.exports = {
     name: "start",
     description: "Sends a start message for Fulcrum Prime.",
     execute(message=null, sendChannel=null) {
-        try {
+        
             let channel; 
             if (message !== null) {
                 channel = message.channel;
@@ -37,8 +37,6 @@ const embed = new Discord.MessageEmbed()
                 .setTimestamp();
 
             channel.send(embed);
-        } catch (e) {
-            return;
-        }
+
     }
 }

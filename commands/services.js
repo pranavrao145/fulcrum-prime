@@ -7,7 +7,7 @@ module.exports = {
     "Displays a help message detailing all the services Fulcrum offers.",
 
     execute(message) {
-        try {
+        
             let channel = message.channel;
 
             const embed = new Discord.MessageEmbed()
@@ -54,8 +54,6 @@ module.exports = {
                 .setTimestamp();
 
             channel.send(embed);
-        } catch (e) {
-            return;
-        }
+
     },
 };

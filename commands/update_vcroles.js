@@ -2,7 +2,7 @@ module.exports = {
     name: "update_vcroles",
     description: "Updates the vcroles for the given guild or all guilds.",
     execute(message = null, client) {
-        try {
+        
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
                     message.reply("sorry, only an administrator can use this command.");
@@ -24,7 +24,7 @@ module.exports = {
                         mem.roles.add(role).then(() => {
                             console.log("VC role updated.");
                         }).catch((err) => {
-                            console.log(err);
+                            console.log("Error");
                         });
 
                     }) 
@@ -50,7 +50,7 @@ module.exports = {
                         mem.roles.add(role).then(() => {
                             console.log("VC role updated.");
                         }).catch((err) => {
-                            console.log(err);
+                            console.log("Error");
                         });
 
                     }) 
@@ -58,8 +58,6 @@ module.exports = {
 
             })
             console.log("All servers' voice channel roles updated successfully.");
-        } catch (e) {
-            return;
-        }
+
     }
 }

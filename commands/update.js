@@ -4,7 +4,7 @@ module.exports = {
     description:
     "Base command for updating channel count, offline roles, date, and member count.",
     execute(message, args, client, con) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -41,8 +41,6 @@ module.exports = {
                 );
                 return;
             }
-        } catch (e) {
-            return;
-        }
+
     },
 };

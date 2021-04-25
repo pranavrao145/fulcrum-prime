@@ -6,7 +6,7 @@ module.exports = {
     description: "Admin command that can move all users from one voice channel to another voice channel",
 
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.")
                 return;
@@ -42,8 +42,6 @@ module.exports = {
                     message.channel.send("Incorrect syntax! Correct syntax: f!movevoice [from voice channel role] [to voice channel role]");
                 }
             }
-        } catch (e) {
-            return;
-        }
+
     }
 }

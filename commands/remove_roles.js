@@ -5,7 +5,7 @@ module.exports = {
     alias: ["rrs"],
     description: "Removes many roles from one user.",
     execute(message, args) {
-        try {
+        
 
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply(
@@ -40,11 +40,9 @@ module.exports = {
                     message.channel.send(`Role ${role.name} successfully removed from ${member.user.tag}`);            
                 }).catch((err) => {
                      message.channel.send("There was an error in adding a role. Please try again.");
-                     console.log(err);
+                     
                 });
             });
-        } catch (e) {
-            return;
-        }
+
     },
 };

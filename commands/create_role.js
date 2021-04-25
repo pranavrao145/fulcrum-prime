@@ -3,7 +3,7 @@ module.exports = {
     alias: ["cr"],
     description: "Creates a role with the given name and optional colour.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -40,7 +40,7 @@ module.exports = {
                     })
                     .catch((err) => {
                         message.channel.send("there was an error creating that role.");
-                        console.log(err);
+                        
                     });
             } else { guild.roles
                     .create({
@@ -53,11 +53,9 @@ module.exports = {
                     })
                     .catch((err) => {
                         message.channel.send("there was an error creating that role.");
-                        console.log(err);
+                        
                     });
             }
-        } catch (e) {
-            return;
-        }
+
     },
 };

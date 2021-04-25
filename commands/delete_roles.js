@@ -5,7 +5,7 @@ module.exports = {
     alias: ["dr"],
     description: "Deletes the given role(s) from the server.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -37,11 +37,9 @@ module.exports = {
                         message.channel.send(
                             "There was an error deleting a role. Skipping over it."
                         );
-                        console.log(err);
+                        
                     });
             });
-        } catch (e) {
-            return;
-        }
+
     },
 };

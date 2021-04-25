@@ -64,7 +64,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     newState.member.roles
       .remove(role)
       .then(() => "Removed voice channel role from user.").catch((e) => {
-          console.log(e);
+          console.log("Error");
       });
   } else {
     // gets new channel
@@ -79,7 +79,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       newState.member.roles
         .remove(old_role)
         .then(() => "Removed voice channel role from user.").catch(e => {
-            console.log(e);
+            console.log("Error");
         });
       const new_role = newState.guild.roles.cache.find(
         (r) => r.name === newState.channel.name
@@ -92,7 +92,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       newState.member.roles
         .add(new_role)
         .then(() => "Added voice channel role to user.").catch(e => {
-            console.log(e); 
+            console.log("Error"); 
         });
     }
     // if the user is not coming from an old channel, adds new role from new channel
@@ -105,7 +105,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       newState.member.roles
         .add(new_role)
         .then(() => "Added voice channel role to user.").catch(e => {
-            console.log(e);
+            console.log("Error");
         });
     }
   }
@@ -184,7 +184,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
       member.roles.remove(offline_role).then(() => {
         console.log("Removed offline role from user.");
       }).catch(e => {
-          console.log(e);
+          console.log("Error");
       });
     }
 
@@ -193,7 +193,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
         console.log("Added idle role to user.");
       }).catch(e =>
           {
-              console.log(e);
+              console.log("Error");
           });
     }
   } else if (newPresence.user.presence.status === "offline") {
@@ -201,7 +201,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
       member.roles.remove(idle_role).then(() => {
         console.log("Removed idle role from user.");
       }).catch(e => {
-          console.log(e);
+          console.log("Error");
       });
     }
 
@@ -209,7 +209,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
       member.roles.add(offline_role).then(() => {
         console.log("Added offline role to user.");
       }).catch(e => {
-          console.log(e);
+          console.log("Error");
       });
     }
   } else {
@@ -217,7 +217,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
       member.roles.remove(offline_role).then(() => {
         console.log("Removed offline role from user.");
       }).catch(e => {
-          console.log(e);
+          console.log("Error");
       });
     }
 
@@ -225,7 +225,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
       member.roles.remove(idle_role).then(() => {
         console.log("Removed idle role from user.");
       }).catch(e => {
-          console.log(e);
+          console.log("Error");
       });
     }
   }

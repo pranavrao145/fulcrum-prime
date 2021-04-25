@@ -3,7 +3,7 @@ module.exports = {
     alias: ["umc"],
     description: "Updates the member count for the server.",
     execute(guild = null, message = null, client, con) {
-        try {
+        
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
                     message.reply("sorry, only an administrator can use this command.");
@@ -70,8 +70,5 @@ module.exports = {
                 );
                 return;
             }
-        } catch(e) {
-            return;
-        }
     },
 };

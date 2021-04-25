@@ -3,7 +3,7 @@ module.exports = {
     alias: ["pm"],
     description: "Gives users the role can-vote to access polling channels.",
     execute(message, args) {
-        try {
+        
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
                 return;
@@ -51,8 +51,6 @@ module.exports = {
             else {
                 message.channel.send("that is not a valid option. Please try again with a valid option.")
             }
-        } catch (e) {
-            return;
-        }
+
     },
 };
