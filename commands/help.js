@@ -25,7 +25,7 @@ module.exports = {
                     {
                         name: "services",
                         value:
-                        "Alias: s\nDisplays a help message detailing all the services Fulcrum offers.",
+                        "Alias: s\nDisplays a help message detailing all the services Fulcrum offers and how to set them up.",
                     },
                     {
                         name: "define [word]",
