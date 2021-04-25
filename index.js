@@ -238,4 +238,7 @@ client.on("guildCreate", (guild) => {
     channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");
         
     client.commands.get("start").execute(null, channel);
+
+    channel.send("**IMPORTANT:** Given that Fulcrum Prime offers a variety of admin tools, please **ensure my role is above any role you want me to modify.** Otherwise, my features will not work properly.");
+
 })
