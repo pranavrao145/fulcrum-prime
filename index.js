@@ -237,5 +237,5 @@ client.on("guildCreate", (guild) => {
 
     channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");
         
-    client.commands.get("start").execute(channel);
+    client.commands.get("start").execute(null, channel);
 })
