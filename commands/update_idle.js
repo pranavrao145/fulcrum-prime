@@ -22,9 +22,13 @@ module.exports = {
                 } else {
                     guild.members.cache.forEach((member) => {
                         if (member.presence.status === "idle") {
-                            member.roles.add(idle_role);
+                            member.roles.add(idle_role).catch(() => {
+                                console.log("Error in updating idle role.")    
+                            });
                         } else {
-                            member.roles.remove(idle_role);
+                            member.roles.remove(idle_role).catch(() => {
+                                console.log("Error in updating idle role.")    
+                            });;
                         }
                     });
                     console.log("All servers' idle roles updated successfully.");
@@ -43,9 +47,13 @@ module.exports = {
                 if (idle_role) {
                     guild.members.cache.forEach((member) => {
                         if (member.presence.status === "idle") {
-                            member.roles.add(idle_role);
+                            member.roles.add(idle_role).catch(() => {
+                                console.log("Error in updating idle role.")    
+                            });;
                         } else {
-                            member.roles.remove(idle_role);
+                            member.roles.remove(idle_role).catch(() => {
+                                console.log("Error in updating idle role.")    
+                            });;
                         }
                     });
                 }

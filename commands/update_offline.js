@@ -1,8 +1,7 @@
 module.exports = {
     name: "update_offline",
     alias: ["uo"],
-    description: "Give people that are offline the offline role, and remove the offline role from people that are online.",
-    execute(message = null, client) {
+    description: "Give people that are offline the offline role, and remove the offline role from people that are online.", execute(message = null, client) {
         try {
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -18,9 +17,13 @@ module.exports = {
                 } else {
                     guild.members.cache.forEach(member => {
                         if (member.presence.status === "offline") {
-                            member.roles.add(offline_role);
+                            member.roles.add(offline_role).catch(() => {
+                                console.log("Error in updating offline role for a user.")
+                            });;
                         } else {
-                            member.roles.remove(offline_role);
+                            member.roles.remove(offline_role).catch(() => {
+                                console.log("Error in updating offline role for a user.")
+                            });
                         }
                     })
                     console.log("Offline roles updated successfully.");
@@ -37,9 +40,13 @@ module.exports = {
                 if (offline_role) {
                     guild.members.cache.forEach(member => {
                         if (member.presence.status === "offline") {
-                            member.roles.add(offline_role);
+                            member.roles.add(offline_role).catch(() => {
+                                console.log("Error in updating offline role for a user.")
+                            });;
                         } else {
-                            member.roles.remove(offline_role);
+                            member.roles.remove(offline_role).catch(() => {
+                                console.log("Error in updating offline role for a user.")
+                            });;
                         }
                     })
                 }

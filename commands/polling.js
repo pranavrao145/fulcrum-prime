@@ -31,7 +31,9 @@ module.exports = {
                     .array()
                     .filter((m) => !m.user.bot)
                     .forEach((member) => {
-                        member.roles.add(role);
+                        member.roles.add(role).catch(() =>{
+                            console.log("Error in updating can-vote role for a user.")
+                        });
                     });
                 message.channel.send("polling mode enabled successfully.");
             }
@@ -40,7 +42,9 @@ module.exports = {
                     .array()
                     .filter((m) => !m.user.bot)
                     .forEach((member) => {
-                        member.roles.remove(role);
+                        member.roles.remove(role).catch(() =>{
+                            console.log("Error in updating can-vote role for a user.")
+                        });;
                     });
                 message.channel.send("polling mode disabled successfully.");
             }
