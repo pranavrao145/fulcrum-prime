@@ -62,7 +62,9 @@ module.exports = {
                                 .size;
                             vc.setName(`👥|Member Count: ${count}`).then(() =>
                                 console.log("Member count updated successfully.")
-                            );
+                            ).catch(() => {
+                                console.log("Error in updating member count.")
+                            });
                         }
                     }
                 );

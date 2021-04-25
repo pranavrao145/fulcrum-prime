@@ -38,7 +38,7 @@ client.on("ready", () => {
         type: "WATCHING",
       },
     })
-    .then((r) => console.log(r));
+    .then((r) => console.log(r))
 
   schedule.scheduleJob("0 0 * * *", function () {
     client.commands.get("update_date").execute(null, client, con);
@@ -49,7 +49,9 @@ client.on("ready", () => {
   client.commands.get("update_idle").execute(null, client);
 });
 
-client.login(process.env.BOT_TOKEN).then();
+client.login(process.env.BOT_TOKEN).then().catch((e) => {
+    throw err;
+});
 
 client.on("voiceStateUpdate", (oldState, newState) => {
   if (!newState.channel || (!newState.member && oldState.channel)) {
@@ -61,7 +63,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 
     newState.member.roles
       .remove(role)
-      .then(() => "Removed voice channel role from user.");
+      .then(() => "Removed voice channel role from user.").catch((e) => {
+          console.log(e);
+      });
   } else {
     // gets new channel
     const testChannel = newState.guild.channels.cache.find(
@@ -74,7 +78,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
       );
       newState.member.roles
         .remove(old_role)
-        .then(() => "Removed voice channel role from user.");
+        .then(() => "Removed voice channel role from user.").catch(e => {
+            console.log(e);
+        });
       const new_role = newState.guild.roles.cache.find(
         (r) => r.name === newState.channel.name
       );
@@ -85,7 +91,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 
       newState.member.roles
         .add(new_role)
-        .then(() => "Added voice channel role to user.");
+        .then(() => "Added voice channel role to user.").catch(e => {
+            console.log(e); 
+        });
     }
     // if the user is not coming from an old channel, adds new role from new channel
     if (newState.channelID === testChannel.id && !oldState.channel) {
@@ -96,7 +104,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 
       newState.member.roles
         .add(new_role)
-        .then(() => "Added voice channel role to user.");
+        .then(() => "Added voice channel role to user.").catch(e => {
+            console.log(e);
+        });
     }
   }
 });
@@ -173,36 +183,49 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
     if (offline_role) {
       member.roles.remove(offline_role).then(() => {
         console.log("Removed offline role from user.");
+      }).catch(e => {
+          console.log(e);
       });
     }
 
     if (idle_role) {
       member.roles.add(idle_role).then(() => {
         console.log("Added idle role to user.");
-      });
+      }).catch(e =>
+          {
+              console.log(e);
+          });
     }
   } else if (newPresence.user.presence.status === "offline") {
     if (idle_role) {
       member.roles.remove(idle_role).then(() => {
         console.log("Removed idle role from user.");
+      }).catch(e => {
+          console.log(e);
       });
     }
 
     if (offline_role) {
       member.roles.add(offline_role).then(() => {
         console.log("Added offline role to user.");
+      }).catch(e => {
+          console.log(e);
       });
     }
   } else {
     if (offline_role) {
       member.roles.remove(offline_role).then(() => {
         console.log("Removed offline role from user.");
+      }).catch(e => {
+          console.log(e);
       });
     }
 
     if (idle_role) {
       member.roles.remove(idle_role).then(() => {
         console.log("Removed idle role from user.");
+      }).catch(e => {
+          console.log(e);
       });
     }
   }

@@ -16,7 +16,9 @@ module.exports = {
 
             translate(text, {to: to_lang}).then(result => {
                 message.channel.send("Translation to *" + to_lang + "*: '" + result.text + "'");
-            }).catch(console.error);
+            }).catch(() => {
+                message.channel.send("Sorry, there was an error translating that.")    
+            });
 
         } catch (e) {
             return;

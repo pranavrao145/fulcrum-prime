@@ -39,9 +39,8 @@ module.exports = {
                 member.roles.remove(role).then(() => {
                     message.channel.send(`Role ${role.name} successfully removed from ${member.user.tag}`);            
                 }).catch((err) => {
-                    // message.channel.send("There was an error in adding a role. Please try again.");
-                    // console.log(err);
-                    throw err;
+                     message.channel.send("There was an error in adding a role. Please try again.");
+                     console.log(err);
                 });
             });
         } catch (e) {
