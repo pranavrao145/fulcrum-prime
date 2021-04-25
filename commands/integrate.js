@@ -160,7 +160,8 @@ module.exports = {
                         })
                         .then(() => console.log("Offline role created successfully."))
                         .catch((err) => {
-                            throw err;
+                            message.channel.send("Sorry, there was an error in creating an idle role.");
+                            console.log(err);
                         });
                 }
 
@@ -174,7 +175,8 @@ module.exports = {
                         })
                         .then(() => console.log("Idle role created successfully."))
                         .catch((err) => {
-                            throw err;
+                            message.channel.send("Sorry, there was an error in creating an idle role.");
+                            console.log(err);
                         });
                 }
 
