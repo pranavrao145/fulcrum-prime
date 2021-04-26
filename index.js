@@ -133,7 +133,7 @@ client.on("message", (message) => {
   } else if (command === "randomnumber" || command === "rn") {
     client.commands.get("random_number").execute(message, args);
   } else if (command === "help" || command === "h") {
-    client.commands.get("help").execute(message);
+    client.commands.get("help").execute(message, args);
   } else if (command === "clearvoice" || command === "cv") {
     client.commands.get("clear_voice_channel").execute(message, args);
   } else if (command === "movevoice" || command === "mv") {

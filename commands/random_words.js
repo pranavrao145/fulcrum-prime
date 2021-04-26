@@ -5,8 +5,6 @@ module.exports = {
     alias: ["rw"],
     description: "Provide a number of random words.",
     execute(message, args) {
-        
-
             if (args.length > 0) {
                 let words = randomWords(parseInt(args[0], 10));
                 let message = "";
