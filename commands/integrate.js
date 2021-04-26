@@ -19,7 +19,8 @@ module.exports = {
             }
 
             if (args[0] === "channelcount") {
-                // integrating channel count let roleFromMention = getRoleFromMention(message, args[1]);
+                // integrating channel count 
+                let roleFromMention = getRoleFromMention(message, args[1]);
 
                 if (!args[1]) {
                     message.channel.send(
@@ -133,7 +134,7 @@ module.exports = {
                             if (err) {
                                 throw err;
                             } else {
-                                message.channel.send("member count channel set successfully.");
+                                message.channel.send("Member count channel set successfully.");
                                 client.commands
                                     .get("update_member_count")
                                     .execute(null, message, client, con);
@@ -262,7 +263,7 @@ module.exports = {
                             if (err) {
                                 throw err;
                             } else {
-                                message.channel.send("date channel set successfully.");
+                                message.channel.send("Date channel set successfully.");
                                 client.commands.get("update_date").execute(message, client, con);
                             }
                         });

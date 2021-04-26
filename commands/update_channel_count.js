@@ -31,7 +31,7 @@ module.exports = {
 
                         if (!vc) {
                             message.channel.send(
-                                "sorry, channel count channel has not been set up yet. An admin f!integrate channel [voice_channel_role] to set this feature up."
+                                "Sorry, channel count channel has not been set up yet. An admin f!integrate channel [voice_channel_role] to set this feature up."
                             );
                         } else {
                             let count = guild.channels.cache.filter(
