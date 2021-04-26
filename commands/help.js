@@ -21,6 +21,7 @@ module.exports = {
                     },
                     { name: "\u200B", value: "\u200B" },
                     { name: "COMMANDS", value: "List of commands Fulcrum offers:" },
+                    { name: "start", value: "\nDisplays a start message." },
                     { name: "help", value: "Alias: h\nDisplays this help message." },
                     {
                         name: "services",

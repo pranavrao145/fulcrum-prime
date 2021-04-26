@@ -161,7 +161,7 @@ client.on("message", (message) => {
   } else if (command === "removeroles" || command === "rrs") {
     client.commands.get("remove_roles").execute(message, args);
   } else if (command === "start") {
-    client.commands.get("start").execute(message, args);
+    client.commands.get("start").execute(message, null);
   }
 });
 
