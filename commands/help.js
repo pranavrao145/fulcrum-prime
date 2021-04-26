@@ -7,7 +7,7 @@ module.exports = {
 
     execute(message, args) {
         let channel = message.channel;
-        if (args.length === 0) {
+        if (args.length === 0 || args[0] !== "admin") {
             const embed = new Discord.MessageEmbed()
                 .setColor("#FFFCF4")
                 .setTitle("Fulcrum Prime - Help")
@@ -47,7 +47,8 @@ module.exports = {
                     },
 
                 )
-                .setTimestamp();
+                .setTimestamp()
+                .setFooter("Looking for admin commands? Try f!help admin.");
 
             channel.send(embed);
 
@@ -125,7 +126,6 @@ module.exports = {
                     },
                 )
                 .setTimestamp()
-                .setFooter("Looking for admin commands? Try f!help admin.")
             channel.send(embed)
             return;
         }
