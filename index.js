@@ -112,7 +112,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot)
+  if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot || message.guild === null)
     return;
 
   const args = message.content
