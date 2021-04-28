@@ -6,7 +6,6 @@ client.commands = new Discord.Collection();
 const prefix = "f!";
 const schedule = require("node-schedule");
 const { Client } = require("pg");
-
 const con = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
