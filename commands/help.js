@@ -15,8 +15,7 @@ module.exports = {
                 .addFields(
                     {
                         name: "PREFIX",
-                        value:
-                            "My prefix is **f!**. \nYou can use any of the commands below with this prefix.",
+                        value: "My prefix is **f!**. \nYou can use any of the commands below with this prefix.",
                     },
                     { name: "\u200B", value: "\u200B" },
                     { name: "COMMANDS", value: "List of commands Fulcrum offers:" },
@@ -123,6 +122,11 @@ module.exports = {
                         name: "clearroles [list of roles]",
                         value:
                             "Alias: clr\nFor each role give, removes the role from any user that has it.",
+                    },
+                    {
+                        name: "clearchat [number of messages (2-100)]",
+                        value:
+                            "Alias: cc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
                     },
                 )
                 .setTimestamp()
