@@ -64,7 +64,7 @@ module.exports = {
                                    ", " +
                                    date.getFullYear()
                                );
-                               message.channel.send("date updated successfully.")
+                               message.channel.send("Date updated successfully.")
                            }
                        })
                 return;
