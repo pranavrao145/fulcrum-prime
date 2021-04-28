@@ -49,7 +49,7 @@ client.on("ready", () => {
   client.commands.get("update_idle").execute(null, client);
 });
 
-client.login(process.env.BOT_TOKEN).then().catch((e) => {
+client.login(process.env.BOT_TOKEN).catch((e) => {
     throw err;
 });
 
