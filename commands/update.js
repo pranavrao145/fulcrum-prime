@@ -37,7 +37,7 @@ module.exports = {
             }
             else {
                 message.channel.send(
-                    "the service provided is invalid! See f!services for a full list of services updatable with this command."
+                    "The service provided is invalid! See f!services for a full list of services updatable with this command."
                 );
                 return;
             }
