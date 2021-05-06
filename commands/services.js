@@ -45,11 +45,6 @@ module.exports = {
                         value:
                         'Admins can run f!integrate channelcount [voice channel role] to set this feature up. If this is done, Fulcrum will automatically update the name of the channel associated with the role specified to reflect the number of channels in your server. Recommended to make voice channel read-only (everyone can see, but no one can join). Although this process is automatic, admins can force a channel count update using f!update channelcount. **NOTE: recommended to run "f!integrate vcroles" just before setting this feature up.**',
                     },
-                    {
-                        name: "Polling Mode",
-                        value:
-                        'Admins can run f!integrate polling to set this feature up. Essentially, this will create a can-vote role, and allow the command f!polling to function properly (see f!help). Ideally, the admin should set it up so that only people with the can-vote role can see polling channels.',
-                    }
                 )
                 .setTimestamp();
 

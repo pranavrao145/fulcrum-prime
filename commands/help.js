@@ -69,11 +69,6 @@ module.exports = {
                         value: "List of commands Fulcrum offers for admins only:",
                     },
                     {
-                        name: "polling [on/off]",
-                        value:
-                            "Alias: pm\nGives/takes away the can-vote role from users in the server. For this feature to work properly, polling mode must be set up (see f!services). ",
-                    },
-                    {
                         name: "clearvoice [voice channel role]",
                         value:
                             "Alias: cv\nClear the voice channel associated with the role specified. For this feature to work properly, voice channel roles must be set up (see f!services).",
