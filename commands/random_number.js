@@ -20,7 +20,7 @@ module.exports = {
 
             const random_num = Math.floor((Math.random() * ending_num) + starting_num);
 
-            message.channel.send("here is your random number from " + starting_num + " to " + ending_num + ": " + random_num);
+            message.channel.send("Here is your random number from " + starting_num + " to " + ending_num + ": " + random_num);
         }
 
     }
