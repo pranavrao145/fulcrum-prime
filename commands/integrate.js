@@ -208,7 +208,7 @@ module.exports = {
                 });
 
             message.channel.send(
-                "voice channel roles set up or updated successfully. NOTE: if you have voice channels with the same names as text channels, voice channel roles may not work properly. Recommended to ensure this is not the case."
+                "Voice channel roles set up or updated successfully. NOTE: if you have voice channels with the same names as text channels, voice channel roles may not work properly. Recommended to ensure this is not the case."
             );
         } else if (args[0] === "datechannel") {
             let roleFromMention = getRoleFromMention(message, args[1]);
