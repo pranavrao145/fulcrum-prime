@@ -53,60 +53,52 @@ client.login(process.env.BOT_TOKEN).catch((e) => {
 });
 
 client.on("voiceStateUpdate", (oldState, newState) => {
-    if (!newState.channel || (!newState.member && oldState.channel)) {
-        // if user leaves all voice channels
-        const role = newState.guild.roles.cache.find(
-            (r) => r.name === oldState.channel.name
-        );
-        if (!role) return;
+    // three situations - user leaves all voice channels, user joins a new voice channel from an old one, user joins a vc without an old channel
 
-        newState.member.roles
-            .remove(role)
-            .then(() => "Removed voice channel role from user.").catch((e) => {
+    if (oldState.channel && !newState.channel) { // if user leaves all voice channels
+        let oldRole = oldState.guild.roles.cache.find(r => r.name === oldState.channel.name);    
+
+        if (!oldRole) return;
+
+        oldState.member.roles.remove(oldRole).then(() => {
+            console.log("Voice channel role removed succesfully")
+        }).catch(() => {
+            console.log("Error");
+        });
+    }
+    else if (oldState.channel && newState.channel) {
+        let oldRole = oldState.guild.roles.cache.find(r => r.name === oldState.channel.name);    
+        let newRole = newState.guild.roles.cache.find(r => r.name === newState.channel.name);    
+
+        if (oldRole) {
+            oldState.member.roles.remove(oldRole).then(() => {
+                console.log("Voice channel role removed succesfully")
+            }).catch(() => {
+            console.log("Error");
+            });
+        }
+
+        if (newRole) {
+            newState.member.roles.add(newRole).then(() => {
+                console.log("Voice channel role added succesfully")
+            }).catch(() => {
                 console.log("Error");
             });
-    } else {
-        // gets new channel
-        const testChannel = newState.guild.channels.cache.find(
-            (c) => c.name === newState.channel.name
-        );
-        // if the user is coming from another channel remove the role from that one and put in the new channel role
-        if (newState.channelID === testChannel.id && oldState.channel) {
-            const old_role = newState.guild.roles.cache.find(
-                (r) => r.name === oldState.channel.name
-            );
-            newState.member.roles
-                .remove(old_role)
-                .then(() => "Removed voice channel role from user.").catch(e => {
-                    console.log("Error");
-                });
-            const new_role = newState.guild.roles.cache.find(
-                (r) => r.name === newState.channel.name
-            );
 
-            if (!old_role || !new_role) {
-                return;
-            }
-
-            newState.member.roles
-                .add(new_role)
-                .then(() => "Added voice channel role to user.").catch(e => {
-                    console.log("Error"); 
-                });
         }
-        // if the user is not coming from an old channel, adds new role from new channel
-        if (newState.channelID === testChannel.id && !oldState.channel) {
-            const new_role = newState.guild.roles.cache.find(
-                (r) => r.name === newState.channel.name
-            );
-            if (!new_role) return;
+    } else if (!oldState.channel && newState.channel) {
+        let newRole = newState.guild.roles.cache.find(r => r.name === newState.channel.name);    
 
-            newState.member.roles
-                .add(new_role)
-                .then(() => "Added voice channel role to user.").catch(e => {
-                    console.log("Error");
-                });
+        if (!newRole) {
+            return;
         }
+
+        newState.member.roles.add(newRole).then(() => {
+            console.log("Voice channel role added succesfully")
+        }).catch(() => {
+            console.log("Error");
+        });
+
     }
 });
 
