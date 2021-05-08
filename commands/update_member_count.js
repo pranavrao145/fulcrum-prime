@@ -31,7 +31,7 @@ module.exports = {
 
                         if (!vc) {
                             message.channel.send(
-                                "sorry, member count channel has not been set up yet. An admin f!integrate membercount [voice_channel_role] to set this feature up."
+                                "Sorry, member count channel has not been set up yet. An admin f!integrate membercount [voice_channel_role] to set this feature up."
                             );
                         } else {
                             let count = guild.members.cache.filter((member) => !member.user.bot)
