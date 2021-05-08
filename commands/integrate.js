@@ -5,11 +5,10 @@ module.exports = {
     description: "Command to integrate Fulcrum with various other entities.",
 
     execute(message, args, con, client) {
-
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             message.reply("sorry, only an administrator can use this command.");
             return;
-        }
+       }
 
         if (!args[0]) {
             message.channel.send(

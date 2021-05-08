@@ -2,7 +2,6 @@ module.exports = {
     name: "update_vcroles",
     description: "Updates the vcroles for the given guild or all guilds.",
     execute(message = null, client) {
-
         if (message !== null) {
             if (!message.member.hasPermission("ADMINISTRATOR")) {
                 message.reply("sorry, only an administrator can use this command.");
@@ -23,7 +22,7 @@ module.exports = {
                 channel.members.forEach(mem => {
                     mem.roles.add(role).then(() => {
                         console.log("VC role updated.");
-                    }).catch((err) => {
+                    }).catch(() => {
                         console.log("Error");
                     });
 

@@ -6,10 +6,9 @@ module.exports = {
     description: "Admin command that can move all users from one voice channel to another voice channel",
 
     execute(message, args) {
-        
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command.")
-                return;
+            if (!message.member.hasPermission("MOVE_MEMBERS")) {
+                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command. ")
+                return
             }
 
             if (!args[0]) {
@@ -25,12 +24,12 @@ module.exports = {
 
                 if (fromRole !== undefined && toRole !== undefined) {
                     fromChannelName = fromRole.name;
-                    fromChannel = message.guild.channels.cache.find(c => c.name === fromChannelName);
+                    fromChannel = message.guild.channels.cache.find(c => c.name === fromChannelName && c.type === "voice");
 
                     toChannelName = toRole.name;
-                    toChannel = message.guild.channels.cache.find(c => c.name === toChannelName);
+                    toChannel = message.guild.channels.cache.find(c => c.name === toChannelName && c.type === "voice");
 
-                    if (toChannel && toChannel.type === 'voice' && fromChannel && fromChannel.type === 'voice') {
+                    if (toChannel && fromChannel) {
                         fromChannel.members.forEach(mem => {
                             mem.voice.setChannel(toChannel);
                         })

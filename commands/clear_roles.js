@@ -5,14 +5,13 @@ module.exports = {
     alias: ["clr"],
     description: "Removes the given role from all users that have it.",
     execute(message, args) {
-        
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command."); return;
+            if (!message.member.hasPermission("MANAGE_ROLES")) {
+                message.reply("sorry, you need the MANAGE_ROLES permission to use this command.");
+                return;
             }
 
             if (args.length == 0) {
-                message.channel.send(
-                    "Incorrect syntax! Correct syntax: f!clearrole [role mention]"
+                message.channel.send("Incorrect syntax! Correct syntax: f!clearrole [role mention]"
                 );
                 return;
             }

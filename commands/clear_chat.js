@@ -2,8 +2,8 @@ module.exports = {
     name: "clear_chat",
     description: "Clears a bulk of messages given a number of messages to clear.",
     execute(message, args) {
-        if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.reply("sorry, only an administrator can use this command.")
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+            message.reply("sorry, you need the MANAGE_MESSAGES permission to use this command.");
             return;
         }
 

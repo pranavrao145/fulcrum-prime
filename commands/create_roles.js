@@ -3,9 +3,8 @@ module.exports = {
     alias: ["crs"],
     description: "Creates role(s) with the given name(s).",
     execute(message, args) {
-        
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command.");
+            if (!message.member.hasPermission("MANAGE_ROLES")) {
+                message.reply("sorry, you need the MANAGE_ROLES permission to use this command.");
                 return;
             }
 

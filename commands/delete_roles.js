@@ -5,9 +5,8 @@ module.exports = {
     alias: ["dr"],
     description: "Deletes the given role(s) from the server.",
     execute(message, args) {
-        
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command.");
+            if (!message.member.hasPermission("MANAGE_ROLES")) {
+                message.reply("sorry, you need the MANAGE_ROLES permission to use this command.");
                 return;
             }
 

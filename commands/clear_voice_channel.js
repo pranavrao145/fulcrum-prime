@@ -6,9 +6,8 @@ module.exports = {
     description: "Admin command that can clear the voice channel",
 
     execute(message, args) {
-        
-            if (!message.member.hasPermission("ADMINISTRATOR")) {
-                message.reply("sorry, only an administrator can use this command.")
+            if (!message.member.hasPermission("MOVE_MEMBERS")) {
+                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command. ")
                 return
             }
 
@@ -23,9 +22,9 @@ module.exports = {
 
                 if (role !== undefined) {
                     channelName = role.name;
-                    channel = message.guild.channels.cache.find(c => c.name === channelName);
+                    channel = message.guild.channels.cache.find(c => c.name === channelName && c.type === 'voice');
 
-                    if (channel && channel.type === 'voice') {
+                    if (channel) {
                         channel.members.forEach(mem => {
                             mem.voice.setChannel(null);
                         })
