@@ -2,7 +2,7 @@ module.exports = {
     name: "update",
     alias: ["ud"],
     description:
-    "Base command for updating channel count, offline roles, date, and member count.",
+    "Base command for updating channel count, date, and member count.",
     execute(message, args, client, con) {
         
             if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -27,10 +27,6 @@ module.exports = {
                 client.commands
                     .get("update_channel_count")
                     .execute(null, message, client, con);
-            } else if (args[0] == "statusroles") {
-                client.commands.get("update_idle").execute(message, client);
-                client.commands.get("update_offline").execute(message, client);
-                message.channel.send("Status roles updated successfully!");
             } else if (args[0] == "vcroles") {
                 client.commands.get("update_vcroles").execute(message, client);
                 message.channel.send("Voice channel roles updated successfully!");

@@ -26,10 +26,6 @@ module.exports = {
                         name: "Voice Channel Roles",
                         value:
                         'Admins can run "f!integrate vcroles" to set up voice channel roles. If anyone joins a voice channel, Fulcrum will give them a role with the same name as that voice channel. This means you can @ everyone in a voice channel by mentioning the name of that voice channel. While this process is automatic, admins can force-update everyone\'s voice channel roles by running f!update vcroles. Note that voice channel roles are case sensitive.', },
-                    { name: "Status Roles",
-                        value:
-                        "Admins can run f!integrate statusroles to create offline and idle roles, which Fulcrum will automatically assign to people who are offline or idle. This means you can @ everyone who is offline or idle using @offline and @idle. Although the process is automatic, admins can force-update everyone's status roles using f!update statusroles.",
-                    },
                     {
                         name: "Date Channel",
                         value:

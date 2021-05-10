@@ -43,9 +43,7 @@ client.on("ready", () => {
         client.commands.get("update_date").execute(null, client, con);
     }); // run everyday at midnight
 
-    client.commands.get("update_offline").execute(null, client);
     client.commands.get("update_vcroles").execute(null, client);
-    client.commands.get("update_idle").execute(null, client);
 });
 
 client.login(process.env.BOT_TOKEN).catch((e) => {
@@ -74,7 +72,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
             oldState.member.roles.remove(oldRole).then(() => {
                 console.log("Voice channel role removed succesfully.")
             }).catch(() => {
-            console.log("Error");
+                console.log("Error");
             });
         }
 
@@ -153,73 +151,7 @@ client.on("message", (message) => {
         client.commands.get("start").execute(message, null);
     } else if (command === "clearchat" || command === "cc") {
         client.commands.get("clear_chat").execute(message, args);
-    }
-});
-
-client.on("presenceUpdate", (oldPresence, newPresence) => {
-    let server = newPresence.guild;
-
-    let idle_role = server.roles.cache.find(
-        (role) => role.name.toLowerCase() === "idle"
-    );
-    let offline_role = server.roles.cache.find(
-        (role) => role.name.toLowerCase() === "offline"
-    );
-
-    if (!(idle_role || offline_role)) return;
-
-    let member = newPresence.member;
-
-    if (newPresence.user.presence.status === "idle") {
-        if (offline_role) {
-            member.roles.remove(offline_role).then(() => {
-                console.log("Removed offline role from user.");
-            }).catch(e => {
-                console.log("Error");
-            });
-        }
-
-        if (idle_role) {
-            member.roles.add(idle_role).then(() => {
-                console.log("Added idle role to user.");
-            }).catch(e =>
-                {
-                    console.log("Error");
-                });
-        }
-    } else if (newPresence.user.presence.status === "offline") {
-        if (idle_role) {
-            member.roles.remove(idle_role).then(() => {
-                console.log("Removed idle role from user.");
-            }).catch(e => {
-                console.log("Error");
-            });
-        }
-
-        if (offline_role) {
-            member.roles.add(offline_role).then(() => {
-                console.log("Added offline role to user.");
-            }).catch(e => {
-                console.log("Error");
-            });
-        }
-    } else {
-        if (offline_role) {
-            member.roles.remove(offline_role).then(() => {
-                console.log("Removed offline role from user.");
-            }).catch(e => {
-                console.log("Error");
-            });
-        }
-
-        if (idle_role) {
-            member.roles.remove(idle_role).then(() => {
-                console.log("Removed idle role from user.");
-            }).catch(e => {
-                console.log("Error");
-            });
-        }
-    }
+    } 
 });
 
 client.on("guildMemberAdd", (channel) => {
