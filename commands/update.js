@@ -2,7 +2,7 @@ module.exports = {
     name: "update",
     alias: ["ud"],
     description:
-    "Base command for updating channel count, offline roles, date, and member count.",
+    "Base command for updating channel count, date, and member count.",
     execute(message, args, client, con) {
         
             if (!message.member.hasPermission("ADMINISTRATOR")) {

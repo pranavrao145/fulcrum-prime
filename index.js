@@ -43,9 +43,7 @@ client.on("ready", () => {
         client.commands.get("update_date").execute(null, client, con);
     }); // run everyday at midnight
 
-    client.commands.get("update_offline").execute(null, client);
     client.commands.get("update_vcroles").execute(null, client);
-    client.commands.get("update_idle").execute(null, client);
 });
 
 client.login(process.env.BOT_TOKEN).catch((e) => {
@@ -74,7 +72,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
             oldState.member.roles.remove(oldRole).then(() => {
                 console.log("Voice channel role removed succesfully.")
             }).catch(() => {
-            console.log("Error");
+                console.log("Error");
             });
         }
 
@@ -153,7 +151,7 @@ client.on("message", (message) => {
         client.commands.get("start").execute(message, null);
     } else if (command === "clearchat" || command === "cc") {
         client.commands.get("clear_chat").execute(message, args);
-    }
+    } 
 });
 
 client.on("guildMemberAdd", (channel) => {
