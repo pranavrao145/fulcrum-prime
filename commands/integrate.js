@@ -141,47 +141,6 @@ module.exports = {
                     });
                 }
             );
-        } else if (args[0] === "statusroles") {
-
-            let guild = message.guild;
-
-            let offline_role = guild.roles.cache.find(
-                (r) => r.name.toLowerCase() === "offline"
-            );
-
-            let idle_role = guild.roles.cache.find(
-                (r) => r.name.toLowerCase() === "idle"
-            );
-
-            if (!offline_role) {
-                guild.roles
-                    .create({
-                        data: { name: "offline" },
-                    })
-                    .then(() => console.log("Offline role created successfully."))
-                    .catch(() => {
-                        message.channel.send("Sorry, there was an error in creating an idle role.");
-
-                    });
-            }
-
-            if (!idle_role) {
-                guild.roles
-                    .create({
-                        data: {
-                            name: "idle",
-                            color: "#FAA61A",
-                        },
-                    })
-                    .then(() => console.log("Idle role created successfully."))
-                    .catch((err) => {
-                        message.channel.send("Sorry, there was an error in creating an idle role.");
-
-                    });
-            }
-
-            message.channel.send("Status roles created successfully. You can update them at anytime using f!update statusroles")
-
         } else if (args[0] === "vcroles") {
             let guild = message.guild;
 
