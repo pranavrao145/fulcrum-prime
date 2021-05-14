@@ -1,3 +1,5 @@
+const { getRoleFromMention, getUserFromMention } = require("../utils");
+
 module.exports = {
     name: "create_roles",
     alias: ["crs"],
@@ -26,7 +28,9 @@ module.exports = {
                 return;
             }
 
-            let finalMention = mention.startsWith("@") ? mention.slice(1) : mention;
+            let submention = mention.startsWith("@") ? mention.slice(1) : mention;
+            
+            let finalMention = submention.replace(/_/g, " ")
 
             let role = guild.roles.cache.find((r) => r.name === finalMention);
 
