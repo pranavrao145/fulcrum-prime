@@ -49,7 +49,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter("Looking for admin commands? Try f!help admin.");
 
-            channel.send(embed);
+            channel.send(embed).catch();
 
             return;
         } else if (args[0] === "admin") {
@@ -82,12 +82,12 @@ module.exports = {
                     {
                         name: "createrole [role name] [color hex]",
                         value:
-                            "Alias: cr\nCreates a role with the color specified. This only works when you want to create a role with one word in the name.",
+                            "Alias: cr\nCreates a role with the color specified. To create a role name with spaces, use underscores in the place of the spaces and Fulcrum Prime will convert them (e.g. @Role_with_spaces).",
                     },
                     {
                         name: "createroles [role names]",
                         value:
-                            "Alias: crs\nCreates a role for each argument. This only works when you want to create roles with one word in the name.",
+                            "Alias: crs\nCreates a role for each argument. To create a role name with spaces, use underscores in the place of the spaces and Fulcrum Prime will convert them (e.g. @Role_with_spaces).",
                     },
                     {
                         name: "deleteroles [list of roles]",
@@ -125,7 +125,7 @@ module.exports = {
                     },
                 )
                 .setTimestamp()
-            channel.send(embed)
+            channel.send(embed).catch()
             return;
         }
 

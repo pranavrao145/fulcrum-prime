@@ -6,7 +6,7 @@ module.exports = {
         
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
-                    message.reply("sorry, only an administrator can use this command.");
+                    message.reply("sorry, only an administrator can use this command.").catch();
                     return;
                 }
                 let guild = message.guild;
@@ -32,12 +32,12 @@ module.exports = {
                         if (!vc) {
                             message.channel.send(
                                 "Sorry, member count channel has not been set up yet. An admin f!integrate membercount [voice_channel_role] to set this feature up."
-                            );
+                            ).catch();
                         } else {
                             let count = guild.members.cache.filter((member) => !member.user.bot)
                                 .size;
-                            vc.setName(`👥|Member Count: ${count}`);
-                            message.channel.send("Member count updated successfully!");
+                            vc.setName(`👥|Member Count: ${count}`).catch();
+                            message.channel.send("Member count updated successfully!").catch();
                         }
                     }
                 );
@@ -64,7 +64,7 @@ module.exports = {
                                 console.log("Member count updated successfully.")
                             ).catch(() => {
                                 console.log("Error in updating member count.")
-                            });
+                            }); 
                         }
                     }
                 );

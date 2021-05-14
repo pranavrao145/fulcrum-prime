@@ -29,6 +29,7 @@ con.connect((err) => {
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    console.log(client.guilds.cache.size)
     client.user
         .setPresence({
             status: "online",
@@ -105,7 +106,6 @@ client.on("message", (message) => {
         return;
 
     const args = message.content
-        .toLowerCase()
         .slice(prefix.length)
         .trim()
         .split(/ +/);
@@ -179,12 +179,14 @@ client.on("channelDelete", (channel) => {
 });
 
 client.on("guildCreate", (guild) => {
-    let channel = guild.systemChannel;
+    let channel = guild.systemChannel || guild.channels.cache.first();
 
-    channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");
+    if (channel) {
+        channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");
 
-    client.commands.get("start").execute(null, channel);
+        client.commands.get("start").execute(null, channel);
 
-    channel.send("**IMPORTANT:** Given that Fulcrum Prime offers a variety of admin tools, please **ensure my role is above any role you want me to modify.** Otherwise, my features will not work properly.");
+        channel.send("**IMPORTANT:** Given that Fulcrum Prime offers a variety of admin tools, please **ensure my role is above any role you want me to modify.** Otherwise, my features will not work properly.");
+    }
 
 })

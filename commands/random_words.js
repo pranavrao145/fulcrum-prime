@@ -7,15 +7,15 @@ module.exports = {
     execute(message, args) {
             if (args.length > 0) {
                 let words = randomWords(parseInt(args[0], 10));
-                let message = "";
+                let msg = "";
                 for (let i = 0; i < words.length - 1; i++) {
-                    message += words[i] + ", ";
+                    msg += words[i] + ", ";
                 }
-                message += words[words.length - 1];
-                message.channel.send("Here are your random words: " + message);
+                msg += words[words.length - 1];
+                message.channel.send("Here are your random words: " + msg).catch();
             }
             else {
-                message.channel.send("Here is your random word: " + randomWords());
+                message.channel.send("Here is your random word: " + randomWords()).catch();
             }
 
     }}

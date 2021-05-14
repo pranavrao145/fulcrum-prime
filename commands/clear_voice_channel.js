@@ -7,12 +7,12 @@ module.exports = {
 
     execute(message, args) {
             if (!message.member.hasPermission("MOVE_MEMBERS")) {
-                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command. ")
+                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command. ").catch()
                 return
             }
 
             if (!args[0]) {
-                message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ");
+                message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ").catch();
                 return;
             } else {
                 let mention = args[0];
@@ -28,12 +28,12 @@ module.exports = {
                         channel.members.forEach(mem => {
                             mem.voice.setChannel(null);
                         })
-                        message.channel.send("Voice channel cleared successfully.");
+                        message.channel.send("Voice channel cleared successfully.").catch();
                     } else {
-                        message.channel.send("No voice channel found associated with that role. Ensure you have set up voice channel roles and try again.")
+                        message.channel.send("No voice channel found associated with that role. Ensure you have set up voice channel roles and try again.").catch();
                     }
                 } else {
-                    message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ");
+                    message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ").catch();
                 }
             }
 
