@@ -6,7 +6,7 @@ module.exports = {
     description: "Removes the given role from the given user(s).",
     execute(message, args) {
         if (!message.member.hasPermission("MANAGE_ROLES")) {
-            message.reply("sorry, you need the MANAGE_ROLES permission to use this command.");
+            message.reply("sorry, you need the MANAGE_ROLES permission to use this command.").catch();
             return;
         }
 

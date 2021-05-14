@@ -6,7 +6,7 @@ module.exports = {
         
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
-                    message.reply("sorry, only an administrator can use this command.");
+                    message.reply("sorry, only an administrator can use this command.").catch();
                     return;
                 }
                 let guild = message.guild;
