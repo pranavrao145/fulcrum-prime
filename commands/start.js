@@ -29,10 +29,10 @@ module.exports = {
                     name: "Services",
                     value: "To see a full list of the services Fulcrum Prime offers and how to set them up, run f!services.",
                 },
-                //{
-                //name: "Information",
-                //value: "To see info about this bot, run f!info.",
-                //}
+                {
+                    name: "Support Server",
+                    value: "To get the link to our support server, run f!supportserver.",
+                },
             )
             .setTimestamp();
 
