@@ -24,9 +24,7 @@ module.exports = {
             return;
         }
         if (message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-            message.channel.bulkDelete(parsedNum).then(() => {
-                message.channel.send("Messages deleted successfully.").catch();
-            }).catch(() => {
+            message.channel.bulkDelete(parsedNum).catch(() => {
                 message.channel.send("There was an error in deleting those messages.").catch();
             });
 
