@@ -38,7 +38,7 @@ client.on("ready", () => {
                 type: "WATCHING",
             },
         })
-        .then((r) => console.log(r))
+        .then((r) => console.log(r)).catch();
 
     schedule.scheduleJob("0 0 * * *", function () {
         client.commands.get("update_date").execute(null, client, con);
@@ -179,7 +179,7 @@ client.on("channelDelete", (channel) => {
 });
 
 client.on("guildCreate", (guild) => {
-    let channel = guild.systemChannel || guild.channels.cache.first();
+    let channel = guild.systemChannel || guild.channels.cache.filter(c => c.type === "text").first();
 
     if (channel) {
         channel.send("Hi there! Thanks for adding me to your server! Take a look at the message below to get started!");

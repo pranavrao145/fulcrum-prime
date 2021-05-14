@@ -26,7 +26,7 @@ module.exports = {
 
                     if (channel) {
                         channel.members.forEach(mem => {
-                            mem.voice.setChannel(null);
+                            mem.voice.setChannel(null).catch();
                         })
                         message.channel.send("Voice channel cleared successfully.").catch();
                     } else {

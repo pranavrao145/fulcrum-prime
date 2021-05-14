@@ -31,7 +31,7 @@ module.exports = {
 
                     if (toChannel && fromChannel) {
                         fromChannel.members.forEach(mem => {
-                            mem.voice.setChannel(toChannel);
+                            mem.voice.setChannel(toChannel).catch();
                         })
                         message.channel.send(`All members in ${fromChannelName} moved to ${toChannelName} successfully.`).catch();
                     } else {

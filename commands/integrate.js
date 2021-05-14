@@ -71,7 +71,7 @@ module.exports = {
                         if (err) {
                             throw err;
                         } else {
-                            message.channel.send("Channel count channel set successfully.");
+                            message.channel.send("Channel count channel set successfully.").catch();
                             client.commands
                                 .get("update_channel_count")
                                 .execute(null, message, client, con);

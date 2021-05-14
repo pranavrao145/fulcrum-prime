@@ -61,8 +61,8 @@ module.exports = {
                                    date.getDate() +
                                    ", " +
                                    date.getFullYear()
-                               );
-                               message.channel.send("Date updated successfully.").catch()
+                               ).catch();
+                               message.channel.send("Date updated successfully.").catch();
                            }
                        })
             return;
@@ -95,7 +95,7 @@ module.exports = {
                                    date.getDate() +
                                    ", " +
                                    date.getFullYear()
-                               ).then(() => console.log("Date updated successfully."));
+                               ).then(() => console.log("Date updated successfully.")).catch();
                            }
                        })
         });
