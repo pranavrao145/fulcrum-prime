@@ -162,7 +162,7 @@ module.exports = {
                             console.log(
                                 `Voice channel role for ${vc.name} created successfully`
                             )
-                        );
+                        ).catch();
                 });
 
             message.channel.send(

@@ -6,7 +6,7 @@ module.exports = {
         
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
-                    message.reply("sorry, only an administrator can use this command.");
+                    message.reply("sorry, only an administrator can use this command.").catch();
                     return;
                 }
                 let guild = message.guild;
@@ -64,7 +64,7 @@ module.exports = {
                                 console.log("Member count updated successfully.")
                             ).catch(() => {
                                 console.log("Error in updating member count.")
-                            });
+                            }); 
                         }
                     }
                 );
