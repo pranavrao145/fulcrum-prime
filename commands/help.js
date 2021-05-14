@@ -44,7 +44,11 @@ module.exports = {
                         value:
                             "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
                     },
-
+                    {
+                        name: "supportserver",
+                        value:
+                            "Alias: ss\nDisplays the link for the Fulcrum Prime Support Server.",
+                    },
                 )
                 .setTimestamp()
                 .setFooter("Looking for admin commands? Try f!help admin.");
