@@ -189,4 +189,4 @@ client.on("guildCreate", (guild) => {
         channel.send("**IMPORTANT:** Given that Fulcrum Prime offers a variety of admin tools, please **ensure my role is above any role you want me to modify.** Otherwise, my features will not work properly.");
     }
 
-}
+})
