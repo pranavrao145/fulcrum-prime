@@ -32,13 +32,13 @@ module.exports = {
                         if (!vc) {
                             message.channel.send(
                                 "Sorry, channel count channel has not been set up yet. An admin f!integrate channel [voice_channel_role] to set this feature up."
-                            );
+                            ).catch();
                         } else {
                             let count = guild.channels.cache.filter(
                                 (c) => (c.type === "voice" || c.type === "text") && !c.deleted
                             ).size;
                             vc.setName(`💬|Channel Count: ${count}`);
-                            message.channel.send("Channel count updated successfully!");
+                            message.channel.send("Channel count updated successfully!").catch();
                         }
                     }
                 );

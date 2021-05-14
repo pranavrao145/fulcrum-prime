@@ -6,14 +6,14 @@ module.exports = {
 
     execute(message, args, con, client) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.reply("sorry, only an administrator can use this command.");
+            message.reply("sorry, only an administrator can use this command.").catch();
             return;
         }
 
         if (!args[0]) {
             message.channel.send(
                 "Incorrect syntax! Correct syntax: f!integrate [service_command] [mention/role]. See f!services for a full list of services Fulcrum offers."
-            );
+            ).catch();
             return;
         }
 
@@ -24,15 +24,15 @@ module.exports = {
             if (!args[1]) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
             if (!roleFromMention) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
-                );
-                return;
+                ).catch();
+                return;s
             }
 
             let guild = message.guild;
@@ -43,7 +43,7 @@ module.exports = {
             if (!voice_channel) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
@@ -86,14 +86,14 @@ module.exports = {
             if (!args[1]) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
             if (!roleFromMention) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
@@ -105,7 +105,7 @@ module.exports = {
             if (!voice_channel) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate membercount [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
@@ -133,7 +133,7 @@ module.exports = {
                         if (err) {
                             throw err;
                         } else {
-                            message.channel.send("Member count channel set successfully.");
+                            message.channel.send("Member count channel set successfully.").catch();
                             client.commands
                                 .get("update_member_count")
                                 .execute(null, message, client, con);
@@ -167,21 +167,21 @@ module.exports = {
 
             message.channel.send(
                 "Voice channel roles set up or updated successfully."
-            );
+            ).catch();
         } else if (args[0] === "datechannel") {
             let roleFromMention = getRoleFromMention(message, args[1]);
 
             if (!args[1]) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
             if (!roleFromMention) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
@@ -193,7 +193,7 @@ module.exports = {
             if (!voice_channel) {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate datechannel [voice channel role]"
-                );
+                ).catch();
                 return;
             }
 
@@ -221,7 +221,7 @@ module.exports = {
                         if (err) {
                             throw err;
                         } else {
-                            message.channel.send("Date channel set successfully.");
+                            message.channel.send("Date channel set successfully.").catch();
                             client.commands.get("update_date").execute(message, client, con);
                         }
                     });
@@ -230,7 +230,7 @@ module.exports = {
         } else {
             message.channel.send(
                 "Incorrect syntax! Correct syntax: f!integrate [service command] [mention/role]. See f!services for a full list of services Fulcrum offers."
-            );
+            ).catch();
         }
 
     },

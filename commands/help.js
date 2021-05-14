@@ -49,7 +49,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter("Looking for admin commands? Try f!help admin.");
 
-            channel.send(embed);
+            channel.send(embed).catch();
 
             return;
         } else if (args[0] === "admin") {
@@ -125,7 +125,7 @@ module.exports = {
                     },
                 )
                 .setTimestamp()
-            channel.send(embed)
+            channel.send(embed).catch()
             return;
         }
 

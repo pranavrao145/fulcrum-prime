@@ -12,10 +12,10 @@ module.exports = {
                     message += words[i] + ", ";
                 }
                 message += words[words.length - 1];
-                message.channel.send("Here are your random words: " + message);
+                message.channel.send("Here are your random words: " + message).catch();
             }
             else {
-                message.channel.send("Here is your random word: " + randomWords());
+                message.channel.send("Here is your random word: " + randomWords()).catch();
             }
 
     }}

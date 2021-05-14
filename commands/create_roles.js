@@ -4,14 +4,14 @@ module.exports = {
     description: "Creates role(s) with the given name(s).",
     execute(message, args) {
         if (!message.member.hasPermission("MANAGE_ROLES")) {
-            message.reply("sorry, you need the MANAGE_ROLES permission to use this command.");
+            message.reply("sorry, you need the MANAGE_ROLES permission to use this command.").catch();
             return;
         }
 
         if (args.length == 0) {
             message.channel.send(
                 "Invalid syntax! Correct syntax: f!createrole [names of roles]"
-            );
+            ).catch();
             return;
         }
 
@@ -22,7 +22,7 @@ module.exports = {
             let user_test = getRoleFromMention(message, mention) || getUserFromMention(message, mention);
 
             if (user_test) {
-                message.channel.send("Could not create role because that role already exists.");
+                message.channel.send("Could not create role because that role already exists.").catch();
                 return;
             }
 
@@ -33,7 +33,7 @@ module.exports = {
             if (role) {
                 message.channel.send(
                     `Could not create role ${role.name} because that role already exists.`
-                );
+                ).catch();
                 return;
             }
 
@@ -44,12 +44,12 @@ module.exports = {
                     },
                 })
                 .then((res) => {
-                    message.channel.send(`Role ${res.name} created successfully.`);
+                    message.channel.send(`Role ${res.name} created successfully.`).catch();
                 })
                 .catch((err) => {
                     message.channel.send(
                         "There was an error creating a role, so skipping over it."
-                    );
+                    ).catch();
 
                 });
         });

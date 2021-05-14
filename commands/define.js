@@ -9,14 +9,14 @@ module.exports = {
             if (args[0]) {
                 dictionary.getDef(args[0].toLowerCase(), "en", null, (definition) => {
                     if (definition["definition"] != undefined) {
-                        message.channel.send("Definition of *" + definition["word"] + "* (" + definition["category"] + "): " + definition["definition"]);
+                        message.channel.send("Definition of *" + definition["word"] + "* (" + definition["category"] + "): " + definition["definition"]).catch();
                     } else {
-                        message.channel.send("No definition found for *" + definition["word"] + "*. " + "Please check your spelling and try again.")
+                        message.channel.send("No definition found for *" + definition["word"] + "*. " + "Please check your spelling and try again.").catch();
                     }
                 })
             }
             else {
-                message.channel.send("Incorrect syntax! Correct syntax: f!define [word]");
+                message.channel.send("Incorrect syntax! Correct syntax: f!define [word]").catch();
             }
 
     }

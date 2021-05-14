@@ -4,7 +4,6 @@ module.exports = {
     name: "start",
     description: "Sends a start message for Fulcrum Prime.",
     execute(message=null, sendChannel=null) {
-
         let channel; 
         if (message !== null) {
             channel = message.channel;
@@ -14,7 +13,8 @@ module.exports = {
         }
         const embed = new Discord.MessageEmbed()
             .setColor("#FFFCF4")
-            .setTitle("Fulcrum Prime - Start") .setDescription("Thanks for adding Fulcrum Prime! Read below to get started!")
+            .setTitle("Fulcrum Prime - Start")
+            .setDescription("Thanks for adding Fulcrum Prime! Read below to get started!")
             .addFields(
                 {
                     name: "Prefix",
@@ -36,7 +36,7 @@ module.exports = {
             )
             .setTimestamp();
 
-        channel.send(embed);
+        channel.send(embed).catch();
 
     }
 }

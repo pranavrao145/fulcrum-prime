@@ -44,7 +44,7 @@ module.exports = {
                 )
                 .setTimestamp();
 
-            channel.send(embed);
+            channel.send(embed).catch();
 
     },
 };

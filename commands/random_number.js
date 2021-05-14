@@ -7,20 +7,20 @@ module.exports = {
         var starting_num, ending_num;
 
         if (args.length < 2) {
-            message.channel.send("Invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]")
+            message.channel.send("Invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]").catch();
             return;
         } else {
             starting_num = Math.ceil(args[0]);
             ending_num = Math.floor(args[1]);
 
             if (isNaN(starting_num) || isNaN(ending_num)) {
-                message.channel.send("Invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]")
+                message.channel.send("Invalid syntax. Correct syntax: f!randomnumber [number start of range] [number end of range]").catch();
                 return;
             }
 
             const random_num = Math.floor((Math.random() * ending_num) + starting_num);
 
-            message.channel.send("Here is your random number from " + starting_num + " to " + ending_num + ": " + random_num);
+            message.channel.send("Here is your random number from " + starting_num + " to " + ending_num + ": " + random_num).catch();
         }
 
     }
