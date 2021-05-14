@@ -37,7 +37,7 @@ module.exports = {
                             let count = guild.channels.cache.filter(
                                 (c) => (c.type === "voice" || c.type === "text") && !c.deleted
                             ).size;
-                            vc.setName(`💬|Channel Count: ${count}`);
+                            vc.setName(`💬|Channel Count: ${count}`).catch();
                             message.channel.send("Channel count updated successfully!").catch();
                         }
                     }
@@ -64,7 +64,7 @@ module.exports = {
                             ).size;
                             vc.setName(`💬|Channel Count: ${count}`).then(() =>
                                 console.log("Channel count updated successfully.")
-                            );
+                            ).catch();
                         }
                     }
                 );

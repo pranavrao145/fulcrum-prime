@@ -36,7 +36,7 @@ module.exports = {
                         } else {
                             let count = guild.members.cache.filter((member) => !member.user.bot)
                                 .size;
-                            vc.setName(`👥|Member Count: ${count}`);
+                            vc.setName(`👥|Member Count: ${count}`).catch();
                             message.channel.send("Member count updated successfully!").catch();
                         }
                     }
