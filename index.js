@@ -151,7 +151,9 @@ client.on("message", (message) => {
         client.commands.get("start").execute(message, null);
     } else if (command === "clearchat" || command === "cc") {
         client.commands.get("clear_chat").execute(message, args);
-    } 
+    } else if (command === "supportserver" || command === "ss") {
+        client.commands.get("support_server").execute(message);
+    }
 });
 
 client.on("guildMemberAdd", (channel) => {
