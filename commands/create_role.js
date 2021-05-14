@@ -1,3 +1,5 @@
+const { getRoleFromMention, getUserFromMention } = require("../utils");
+
 module.exports = {
     name: "create_role",
     alias: ["cr"],
@@ -10,16 +12,25 @@ module.exports = {
 
             if (!args[0]) {
                 message.channel.send(
-                    "Invalid syntax! Correct syntax: f!createrole [name of role] [#colour code (optional)]"
+                    "Invalid syntax! Correct syntax: f!createrole [name of role (underscores for spaces)] [#colour code (optional)]"
                 );
                 return;
             }
 
             let guild = message.guild;
 
-            if (args[0].startsWith('@')) args[0] = args[0].slice(1); 
+            let user_test = getRoleFromMention(message, args[0]) || getUserFromMention(message, args[0]);
 
-            let role = guild.roles.cache.find((r) => r.name === args[0]);
+            if (user_test) {
+                message.channel.send("Could not create role because that role already exists.");
+                return;
+            }
+        
+            if (args[0].startsWith('@')) args[0] = args[0].slice(1); 
+            
+            let role_parsed = args[0].replace(/_/g, " ")
+
+            let role = guild.roles.cache.find((r) => r.name === role_parsed);
 
             if (role) {
                 message.channel.send("Could not create role because that role already exists.");
@@ -30,7 +41,7 @@ module.exports = {
                 guild.roles
                     .create({
                         data: {
-                            name: args[0],
+                            name: role_parsed,
                             color: args[1].toUpperCase(),
                         },
                     })
@@ -44,7 +55,7 @@ module.exports = {
             } else { guild.roles
                     .create({
                         data: {
-                            name: args[0],
+                            name: role_parsed,
                         },
                     })
                     .then((res) => {

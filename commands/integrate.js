@@ -8,7 +8,7 @@ module.exports = {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             message.reply("sorry, only an administrator can use this command.");
             return;
-       }
+        }
 
         if (!args[0]) {
             message.channel.send(
