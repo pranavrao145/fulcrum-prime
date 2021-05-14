@@ -7,7 +7,7 @@ module.exports = {
 
     execute(message, args) {
             if (!message.member.hasPermission("MOVE_MEMBERS")) {
-                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command. ")
+                message.reply("sorry, you need the MOVE_MEMBERS permission to use this command.").catch();
                 return
             }
 
