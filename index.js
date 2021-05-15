@@ -153,6 +153,8 @@ client.on("message", (message) => {
         client.commands.get("clear_chat").execute(message, args);
     } else if (command === "supportserver" || command === "ss") {
         client.commands.get("support_server").execute(message);
+    } else if (command === "ban") {
+        client.commands.get("ban").execute(message, args);
     }
 });
 
