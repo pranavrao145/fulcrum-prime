@@ -48,7 +48,7 @@ client.on("ready", () => {
 });
 
 client.login(process.env.BOT_TOKEN).catch((e) => {
-    throw err;
+    throw e;
 });
 
 client.on("voiceStateUpdate", (oldState, newState) => {
