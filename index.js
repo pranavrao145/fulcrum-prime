@@ -48,7 +48,7 @@ client.on("ready", () => {
 });
 
 client.login(process.env.BOT_TOKEN).catch((e) => {
-    throw e;
+    throw err;
 });
 
 client.on("voiceStateUpdate", (oldState, newState) => {
@@ -153,7 +153,12 @@ client.on("message", (message) => {
         client.commands.get("clear_chat").execute(message, args);
     } else if (command === "supportserver" || command === "ss") {
         client.commands.get("support_server").execute(message);
+    } else if (command === "ban") {
+        client.commands.get("ban").execute(message, args);
+    } else if (command === "kick") {
+        client.commands.get("kick").execute(message, args);
     }
+
 });
 
 client.on("guildMemberAdd", (channel) => {

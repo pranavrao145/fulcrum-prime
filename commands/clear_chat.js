@@ -24,11 +24,12 @@ module.exports = {
             return;
         }
         if (message.guild.me.hasPermission("MANAGE_MESSAGES")) {
+            message.delete().catch(); 
+
             message.channel.bulkDelete(parsedNum).catch(() => {
                 message.channel.send("There was an error in deleting those messages.").catch();
             });
 
-            message.delete().catch(); 
         } 
         else {
             message.channel.send("There was an error in deleting those messages.").catch();
