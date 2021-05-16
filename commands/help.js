@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 
+
 module.exports = {
     name: "help",
     alias: ["h"],
@@ -126,6 +127,16 @@ module.exports = {
                         name: "clearchat [number of messages (2-100)]",
                         value:
                             "Alias: cc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
+                    },
+                    {
+                        name: "kick [user to kick] [reason (optional)]",
+                        value:
+                            "\nKicks the user specified for the reason, if specified.",
+                    },
+                    {
+                        name: "ban [user mention] [days (optional, 0-7, 0 for default)]  [reason (optional)]",
+                        value:
+                            "\nBans the user specified for the reason, if specified. Also purges their messages on the server for the amount of days specified, if specified. Days is 0 by default, so if you want to add a reason with just the default amount of days, simply pass 0 as the argument for days.",
                     },
                 )
                 .setTimestamp()
