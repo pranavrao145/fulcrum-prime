@@ -23,7 +23,7 @@ module.exports = {
                     mem.roles.add(role).then(() => {
                         console.log("VC role updated.");
                     }).catch(() => {
-                        console.log("Error");
+                        console.log("Error updating voice channel roles.");
                     });
 
                 })
@@ -60,7 +60,7 @@ module.exports = {
                     mem.roles.add(role).then(() => {
                         console.log("VC role updated.");
                     }).catch(() => {
-                        console.log("Error");
+                        console.log("Error updating voice channel roles.");
                     });
 
                 }) 
@@ -70,7 +70,7 @@ module.exports = {
                         mem.roles.remove(role).then(() => {
                             console.log("VC role updated.");
                         }).catch(() => {
-                            console.log("Error")
+                            console.log("Error updating voice channel roles.")
                         })
                     }
                 })

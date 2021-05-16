@@ -62,7 +62,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
         oldState.member.roles.remove(oldRole).then(() => {
             console.log("Voice channel role removed succesfully.")
         }).catch(() => {
-            console.log("Error");
+            console.log("Error updating voice channel role.");
         });
     }
     else if (oldState.channel && newState.channel) {
@@ -73,7 +73,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
             oldState.member.roles.remove(oldRole).then(() => {
                 console.log("Voice channel role removed succesfully.")
             }).catch(() => {
-                console.log("Error");
+                console.log("Error updating voice channel role.");
             });
         }
 
@@ -81,7 +81,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
             newState.member.roles.add(newRole).then(() => {
                 console.log("Voice channel role added succesfully.")
             }).catch(() => {
-                console.log("Error");
+                console.log("Error updating voice channel role.");
             });
 
         }
@@ -95,7 +95,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
         newState.member.roles.add(newRole).then(() => {
             console.log("Voice channel role added succesfully.")
         }).catch(() => {
-            console.log("Error");
+            console.log("Error updating voice channel role.");
         });
 
     }
