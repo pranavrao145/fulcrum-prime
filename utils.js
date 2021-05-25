@@ -38,5 +38,6 @@ function getChannelFromMention(message, mention) {
 
 module.exports = {
     getRoleFromMention,
-    getUserFromMention
+    getUserFromMention,
+    getChannelFromMention
 }
