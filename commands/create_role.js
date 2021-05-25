@@ -49,7 +49,7 @@ module.exports = {
                         message.channel.send(`Role ${res.name} created successfully.`).catch();
                     })
                     .catch((err) => {
-                        message.channel.send("there was an error creating that role.").catch();
+                        message.channel.send("there was an error creating that role. Please check my permissions and try again.").catch();
                         
                     });
             } else { guild.roles
@@ -62,7 +62,7 @@ module.exports = {
                         message.channel.send(`Role ${res.name} created successfully.`).catch();
                     })
                     .catch((err) => {
-                        message.channel.send("there was an error creating that role.").catch();
+                        message.channel.send("there was an error creating that role. Please check my permissions and try again.").catch();
                         
                     });
             }

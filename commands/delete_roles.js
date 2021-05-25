@@ -22,7 +22,7 @@ module.exports = {
 
                 if (!role) {
                     message.channel.send(
-                        "Could not delete a role because the role was invalid. Skipping over it."
+                        "Could not delete a role because the role was invalid, so skipping over it."
                     ).catch();
                     return;
                 }
@@ -34,7 +34,7 @@ module.exports = {
                     })
                     .catch((err) => {
                         message.channel.send(
-                            "There was an error deleting a role. Skipping over it."
+                            "There was an error deleting a role, so skipping over it. Please check my permissions and try again."
                         ).catch();
                         
                     });

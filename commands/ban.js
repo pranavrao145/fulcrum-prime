@@ -44,7 +44,7 @@ module.exports = {
         }).then(mem => {
             message.channel.send(`User ${mem.user.tag} was banned successfully.`).catch()
         }).catch(() => {
-            message.channel.send("There was an error banning that user.").catch();
+            message.channel.send("There was an error banning that user. Please check my permissions and try again.").catch();
         })
 
     }

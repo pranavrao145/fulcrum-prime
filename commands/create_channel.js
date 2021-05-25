@@ -6,5 +6,9 @@ module.exports = {
             message.reply("sorry, you need the MANAGE_CHANNELS permission to use this command.").catch();
             return;
         }
+
+        if (args.length === 0) {
+            message.channel.send("Invalid syntax! ")
+        }
     }
 }
