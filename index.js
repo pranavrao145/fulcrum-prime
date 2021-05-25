@@ -157,8 +157,9 @@ client.on("message", (message) => {
         client.commands.get("ban").execute(message, args);
     } else if (command === "kick") {
         client.commands.get("kick").execute(message, args);
+    } else if (command === "leavevoice" || command === "leave" || command === "lv") {
+        client.commands.get("leave_voice").execute(message);
     }
-
 });
 
 client.on("guildMemberAdd", (channel) => {
