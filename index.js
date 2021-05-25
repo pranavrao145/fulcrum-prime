@@ -157,7 +157,10 @@ client.on("message", (message) => {
         client.commands.get("ban").execute(message, args);
     } else if (command === "kick") {
         client.commands.get("kick").execute(message, args);
+    } else if (command === "createchannel" || command === "cc") {
+        client.commands.get("create_channel").execute(message, args);
     }
+
 
 });
 
