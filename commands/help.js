@@ -46,6 +46,11 @@ module.exports = {
                             "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
                     },
                     {
+                        name: "leavevoice",
+                        value:
+                            "Alias: lv, leave\nMakes user leave the voice channel they are currently in.",
+                    },
+                    {
                         name: "supportserver",
                         value:
                             "Alias: ss\nDisplays the link for the Fulcrum Prime Support Server.",
