@@ -134,9 +134,14 @@ module.exports = {
                             "\nKicks the user specified for the reason, if specified.",
                     },
                     {
-                        name: "ban [user mention] (days, 0-7, 0 for default) (reason)",
+                        name: "ban [user mention] (days, 0-7, 0 default) (reason)",
                         value:
                             "\nBans the user specified for the reason, if specified. Also purges their messages on the server for the amount of days specified, if specified. Days is 0 by default, so if you want to add a reason with just the default amount of days, simply pass 0 as the argument for days.",
+                    },
+                    {
+                        name: "f!createchannel [name (underscores for spaces)] (type, text/voice, default text) (permission, private/public, default public)",
+                        value:
+                            "Alias: cc\nCreates a channel with a name, and optional type and permissions specified. By default, the value for type will be 'text', but you can change it by specifically passing 'voice'. Similarly, the permission for the channel will be public by default, but you can explicitly pass private to make the channel invisible to the @everyone role.",
                     },
                 )
                 .setTimestamp()

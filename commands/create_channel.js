@@ -8,7 +8,7 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!createchannel [name (underscores for spaces)] (type, default text) (private/public, default public)").catch();
+            message.channel.send("Invalid syntax! Correct syntax: f!createchannel [name (underscores for spaces)] (type, text/voice, default text) (permission, private/public, default public)").catch();
             return;
         }
 
