@@ -126,7 +126,7 @@ module.exports = {
                     {
                         name: "purgechat [number of messages (2-100)]",
                         value:
-                            "Alias: pc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
+                            "Alias: pc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat. **NOTE:** you can only bulk delete messages under 14 days old.",
                     },
                     {
                         name: "kick [user to kick] [reason (optional)]",

@@ -26,7 +26,7 @@ module.exports = {
         if (message.guild.me.hasPermission("MANAGE_MESSAGES")) {
             message.delete().catch(); 
 
-            message.channel.bulkDelete(parsedNum).catch(() => {
+            message.channel.bulkDelete(parsedNum).catch((e) => {
                 message.channel.send("There was an error in deleting those messages.").catch();
             });
 
