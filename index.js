@@ -149,8 +149,8 @@ client.on("message", (message) => {
         client.commands.get("remove_roles").execute(message, args);
     } else if (command === "start") {
         client.commands.get("start").execute(message, null);
-    } else if (command === "clearchat" || command === "cc") {
-        client.commands.get("clear_chat").execute(message, args);
+    } else if (command === "purgechat" || command === "pc") {
+        client.commands.get("purge_chat").execute(message, args);
     } else if (command === "supportserver" || command === "ss") {
         client.commands.get("support_server").execute(message);
     } else if (command === "ban") {

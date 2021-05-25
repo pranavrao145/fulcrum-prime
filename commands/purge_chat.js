@@ -1,5 +1,5 @@
 module.exports = {
-    name: "clear_chat",
+    name: "purge_chat",
     description: "Clears a bulk of messages given a number of messages to clear.",
     execute(message, args) {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) {
@@ -8,7 +8,7 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!clearchat [number of messages to clear (2-100)]").catch();
+            message.channel.send("Invalid syntax! Correct syntax: f!purgechat [number of messages to clear (2-100)]").catch();
             return;
         }
 

@@ -124,9 +124,9 @@ module.exports = {
                             "Alias: clr\nFor each role give, removes the role from any user that has it.",
                     },
                     {
-                        name: "clearchat [number of messages (2-100)]",
+                        name: "purgechat [number of messages (2-100)]",
                         value:
-                            "Alias: cc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
+                            "Alias: pc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
                     },
                     {
                         name: "kick [user to kick] [reason (optional)]",
