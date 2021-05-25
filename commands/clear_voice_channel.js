@@ -30,7 +30,7 @@ module.exports = {
                         })
                         message.channel.send("Voice channel cleared successfully.").catch();
                     } else {
-                        message.channel.send("No voice channel found associated with one or more of the roles supplied. Ensure you have set up voice channel roles, that I have permission to view the channel, and try again.").catch();
+                        message.channel.send("No voice channel found associated with the role supplied. Ensure you have set up voice channel roles and that I have permission to view the channel, and try again.").catch();
                     }
                 } else {
                     message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role]").catch();
