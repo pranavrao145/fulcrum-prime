@@ -12,7 +12,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
                 .setColor("#FFFCF4")
                 .setTitle("Fulcrum Prime - Help")
-                .setDescription("A breakdown of all the commands offered by Fulcrum.")
+                .setDescription("A breakdown of all the commands offered by Fulcrum. Note, a parameter inside these brackets [] is mandatory, and anything inside these brackets () is not.")
                 .addFields(
                     {
                         name: "PREFIX",
