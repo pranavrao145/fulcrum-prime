@@ -12,7 +12,7 @@ module.exports = {
 
             if (!args[0]) {
                 message.channel.send(
-                    "Invalid syntax! Correct syntax: f!createrole [name of role (underscores for spaces)] [#colour code (optional)]"
+                    "Invalid syntax! Correct syntax: f!createrole [name of role (underscores for spaces)] (#colour code)"
                 ).catch();
                 return;
             }

@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!ban [user mention] [days (optional, 0-7, 0 for default)]  [reason (optional)]")
+            message.channel.send("Invalid syntax! Correct syntax: f!ban [user mention] (days, 0-7, 0 for default)  (reason)")
             return;
         }
 
