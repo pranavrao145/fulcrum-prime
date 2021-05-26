@@ -159,9 +159,9 @@ client.on("message", (message) => {
         client.commands.get("kick").execute(message, args);
     } else if (command === "createchannel" || command === "cc") {
         client.commands.get("create_channel").execute(message, args);
+    } else if (command === "deletechannel" || command === "dc") {
+        client.commands.get("delete_channel").execute(message, args);
     }
-
-
 });
 
 client.on("guildMemberAdd", (channel) => {
