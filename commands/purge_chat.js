@@ -1,5 +1,5 @@
 module.exports = {
-    name: "clear_chat",
+    name: "purge_chat",
     description: "Clears a bulk of messages given a number of messages to clear.",
     execute(message, args) {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) {
@@ -8,7 +8,7 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!clearchat [number of messages to clear (2-100)]").catch();
+            message.channel.send("Invalid syntax! Correct syntax: f!purgechat [number of messages to clear (2-100)]").catch();
             return;
         }
 
@@ -26,13 +26,13 @@ module.exports = {
         if (message.guild.me.hasPermission("MANAGE_MESSAGES")) {
             message.delete().catch(); 
 
-            message.channel.bulkDelete(parsedNum).catch(() => {
-                message.channel.send("There was an error in deleting those messages.").catch();
+            message.channel.bulkDelete(parsedNum).catch((e) => {
+                message.channel.send("There was an error in deleting those messages. Please try again after ensuring the messages are not more than 14 days old, and that I have sufficient permissions to delete the messages.").catch();
             });
 
         } 
         else {
-            message.channel.send("There was an error in deleting those messages.").catch();
+            message.channel.send("There was an error in deleting those messages. Please try again after ensuring the messages are not more than 14 days old, and that I have sufficient permissions to delete the messages.").catch();
         }
     }
 }

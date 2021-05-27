@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!kick [user mention] [reason (optional)]")
+            message.channel.send("Invalid syntax! Correct syntax: f!kick [user mention] (reason)")
             return;
         }
     
@@ -26,7 +26,7 @@ module.exports = {
         userToKick.kick(r ? r : null).then((mem) => {
             message.channel.send(`User ${mem.user.tag} kicked successfully.`);
         }).catch(() => {
-            message.channel.send("There was an error kicking that user.");
+            message.channel.send("There was an error kicking that user. Please check my permissions and try again.");
         })
     }
 }

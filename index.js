@@ -149,14 +149,18 @@ client.on("message", (message) => {
         client.commands.get("remove_roles").execute(message, args);
     } else if (command === "start") {
         client.commands.get("start").execute(message, null);
-    } else if (command === "clearchat" || command === "cc") {
-        client.commands.get("clear_chat").execute(message, args);
+    } else if (command === "purgechat" || command === "pc") {
+        client.commands.get("purge_chat").execute(message, args);
     } else if (command === "supportserver" || command === "ss") {
         client.commands.get("support_server").execute(message);
     } else if (command === "ban") {
         client.commands.get("ban").execute(message, args);
     } else if (command === "kick") {
         client.commands.get("kick").execute(message, args);
+    } else if (command === "createchannel" || command === "cc") {
+        client.commands.get("create_channel").execute(message, args);
+    } else if (command === "deletechannel" || command === "dc") {
+        client.commands.get("delete_channels").execute(message, args);
     } else if (command === "leavevoice" || command === "leave" || command === "lv") {
         client.commands.get("leave_voice").execute(message);
     }

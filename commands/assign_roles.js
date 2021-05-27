@@ -28,14 +28,14 @@ module.exports = {
                 let role = getRoleFromMention(message, roleMention);
 
                 if (!role) {
-                    message.channel.send("A role supplied was invalid. Skipping over it.").catch();
+                    message.channel.send("A role supplied was invalid, so skipping over it.").catch();
                     return;
                 }
 
                 member.roles.add(role).then(() => {
                     message.channel.send(`Role ${role.name} successfully added to ${member.user.tag}`).catch();            
                 }).catch((err) => {
-                     message.channel.send("There was an error in adding a role. Please try again.").catch();
+                     message.channel.send("There was an error in adding a role. Please check my permissions and try again.").catch();
                      
                 });
             });

@@ -52,7 +52,7 @@ module.exports = {
                 })
                 .catch((err) => {
                     message.channel.send(
-                        "There was an error creating a role, so skipping over it."
+                        "There was an error creating a role, so skipping over it. Please check my permissions and try again."
                     ).catch();
 
                 });

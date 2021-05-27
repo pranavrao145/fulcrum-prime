@@ -12,7 +12,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
                 .setColor("#FFFCF4")
                 .setTitle("Fulcrum Prime - Help")
-                .setDescription("A breakdown of all the commands offered by Fulcrum.")
+                .setDescription("A breakdown of all the commands offered by Fulcrum. Note, a parameter inside these brackets [] is mandatory, and anything inside these brackets () is not.")
                 .addFields(
                     {
                         name: "PREFIX",
@@ -41,7 +41,7 @@ module.exports = {
                         value: "Alias: rn\nPicks a random number in the range specified.",
                     },
                     {
-                        name: "randomwords [num]",
+                        name: "randomwords (number)",
                         value:
                             "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
                     },
@@ -66,7 +66,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
                 .setColor("#FFFCF4")
                 .setTitle("Fulcrum Prime - Admin Help")
-                .setDescription("A breakdown of all the admin commands offered by Fulcrum.")
+                .setDescription("A breakdown of all the admin commands offered by Fulcrum. Note, a parameter inside these brackets [] is mandatory, and anything inside these brackets () is not.")
                 .addFields(
                     {
                         name: "PREFIX",
@@ -90,7 +90,7 @@ module.exports = {
                             "Alias: mv\nMoves all users in the voice channel associated with the first role to the voice channel associated with the second. For this feature to work properly, voice channel roles must be set up (see f!services). **Note:** attempting to move someone to a voice channel which they do not have permission to access will give them *temporary access* to that channel and still move them. Their access will be revoked upon leaving the voice channel.",
                     },
                     {
-                        name: "createrole [role name] [color hex]",
+                        name: "createrole [role name] (color hex)",
                         value:
                             "Alias: cr\nCreates a role with the color specified. To create a role name with spaces, use underscores in the place of the spaces and Fulcrum Prime will convert them (e.g. @Role_with_spaces).",
                     },
@@ -129,19 +129,29 @@ module.exports = {
                             "Alias: clr\nFor each role give, removes the role from any user that has it.",
                     },
                     {
-                        name: "clearchat [number of messages (2-100)]",
+                        name: "purgechat [number of messages (2-100)]",
                         value:
-                            "Alias: cc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat.",
+                            "Alias: pc\nDeletes the amount of messages (before the command) specified. Also deletes the message the admins uses to clear the chat. **NOTE:** you can only bulk delete messages under 14 days old.",
                     },
                     {
-                        name: "kick [user to kick] [reason (optional)]",
+                        name: "kick [user to kick] (reason)",
                         value:
                             "\nKicks the user specified for the reason, if specified.",
                     },
                     {
-                        name: "ban [user mention] [days (optional, 0-7, 0 for default)]  [reason (optional)]",
+                        name: "ban [user mention] (days, 0-7, 0 default) (reason)",
                         value:
                             "\nBans the user specified for the reason, if specified. Also purges their messages on the server for the amount of days specified, if specified. Days is 0 by default, so if you want to add a reason with just the default amount of days, simply pass 0 as the argument for days.",
+                    },
+                    {
+                        name: "createchannel [name (underscores for spaces)] (type, text/voice, default text) (permission, private/public, default public)",
+                        value:
+                            "Alias: cc\nCreates a channel with a name, and optional type and permissions specified. By default, the value for type will be 'text', but you can change it by specifically passing 'voice'. Similarly, the permission for the channel will be public by default, but you can explicitly pass private to make the channel invisible to the @everyone role.",
+                    },
+                    {
+                        name: "deletechannels [channel mentions (vc roles for voice channels)]",
+                        value:
+                            "Alias: dc\nDeletes the channel specified.",
                     },
                 )
                 .setTimestamp()
