@@ -47,7 +47,7 @@ client.on("ready", () => {
     client.commands.get("update_vcroles").execute(null, client);
 });
 
-client.login(process.env.BOT_TOKEN).catch((e) => {
+client.login(process.env.BOT_TOKEN).catch(() => {
     throw err;
 });
 
