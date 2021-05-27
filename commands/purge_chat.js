@@ -26,7 +26,7 @@ module.exports = {
         if (message.guild.me.hasPermission("MANAGE_MESSAGES")) {
             message.delete().catch(); 
 
-            message.channel.bulkDelete(parsedNum).catch((e) => {
+            message.channel.bulkDelete(parsedNum).catch(() => {
                 message.channel.send("There was an error in deleting those messages. Please try again after ensuring the messages are not more than 14 days old, and that I have sufficient permissions to delete the messages.").catch();
             });
 

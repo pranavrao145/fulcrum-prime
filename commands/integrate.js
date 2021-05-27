@@ -32,7 +32,7 @@ module.exports = {
                 message.channel.send(
                     "Incorrect syntax! Correct syntax: f!integrate channelcount [voice channel role]"
                 ).catch();
-                return;s
+                return;
             }
 
             let guild = message.guild;
@@ -74,7 +74,7 @@ module.exports = {
                             message.channel.send("Channel count channel set successfully.").catch();
                             client.commands
                                 .get("update_channel_count")
-                                .execute(null, message, client, con);
+                                .execute(null, message, con);
                         }
                     });
                 }
@@ -136,7 +136,7 @@ module.exports = {
                             message.channel.send("Member count channel set successfully.").catch();
                             client.commands
                                 .get("update_member_count")
-                                .execute(null, message, client, con);
+                                .execute(null, message, con);
                         }
                     });
                 }

@@ -167,25 +167,25 @@ client.on("message", (message) => {
 client.on("guildMemberAdd", (channel) => {
     client.commands
         .get("update_member_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("guildMemberRemove", (channel) => {
     client.commands
         .get("update_member_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("channelCreate", (channel) => {
     client.commands
         .get("update_channel_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("channelDelete", (channel) => {
     client.commands
         .get("update_channel_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("guildCreate", (guild) => {

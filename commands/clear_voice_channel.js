@@ -1,4 +1,4 @@
-const {getRoleFromMention} = require("../utils");
+const { getRoleFromMention } = require("../utils");
 
 module.exports = {
     name: "clear_voice_channel",
@@ -12,7 +12,7 @@ module.exports = {
             }
 
             if (!args[0]) {
-                message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ").catch();
+                message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role]").catch();
                 return;
             } else {
                 let mention = args[0];
@@ -33,7 +33,7 @@ module.exports = {
                         message.channel.send("No voice channel found associated with that role. Ensure you have set up voice channel roles, that I have permission to view the voice channel, and try again.").catch();
                     }
                 } else {
-                    message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role] ").catch();
+                    message.channel.send("Incorrect syntax! Correct syntax: f!clearvoice [voice channel role]").catch();
                 }
             }
 

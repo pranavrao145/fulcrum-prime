@@ -22,11 +22,11 @@ module.exports = {
             } else if (args[0] == "membercount") {
                 client.commands
                     .get("update_member_count")
-                    .execute(null, message, client, con);
+                    .execute(null, message, con);
             } else if (args[0] == "channelcount") {
                 client.commands
                     .get("update_channel_count")
-                    .execute(null, message, client, con);
+                    .execute(null, message, con);
             } else if (args[0] == "vcroles") {
                 client.commands.get("update_vcroles").execute(message, client);
                 message.channel.send("Voice channel roles updated successfully!").catch();

@@ -2,7 +2,7 @@ module.exports = {
     name: "update_member_count",
     alias: ["umc"],
     description: "Updates the member count for the server.",
-    execute(guild = null, message = null, client, con) {
+    execute(guild = null, message = null, con) {
         
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
