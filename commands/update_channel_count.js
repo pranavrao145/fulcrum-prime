@@ -2,8 +2,7 @@ module.exports = {
     name: "update_channel_count",
     alias: ["ucc"],
     description: "Updates the channel count for the server.",
-    execute(guild = null, message = null, client, con) {
-        
+    execute(guild = null, message = null, con) {
             if (message !== null) {
                 if (!message.member.hasPermission("ADMINISTRATOR")) {
                     message.reply("sorry, only an administrator can use this command.").catch();

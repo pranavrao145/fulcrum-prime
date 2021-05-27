@@ -50,7 +50,7 @@ module.exports = {
                 .then((res) => {
                     message.channel.send(`Role ${res.name} created successfully.`).catch();
                 })
-                .catch((err) => {
+                .catch(() => {
                     message.channel.send(
                         "There was an error creating a role, so skipping over it. Please check my permissions and try again."
                     ).catch();

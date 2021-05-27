@@ -48,7 +48,7 @@ module.exports = {
                 .then((res) => {
                     message.channel.send(`Role ${res.name} created successfully.`).catch();
                 })
-                .catch((err) => {
+                .catch(() => {
                     message.channel.send("There was an error creating that role. Please check my permissions and try again.").catch();
                 });
         } else { 
@@ -61,7 +61,7 @@ module.exports = {
                 .then((res) => {
                     message.channel.send(`Role ${res.name} created successfully.`).catch();
                 })
-                .catch((err) => {
+                .catch(() => {
                     message.channel.send("There was an error creating that role. Please check my permissions and try again.").catch();
 
                 });

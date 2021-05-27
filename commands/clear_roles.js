@@ -3,7 +3,7 @@ const { getRoleFromMention } = require("../utils");
 module.exports = {
     name: "clear_roles",
     alias: ["clr"],
-    description: "Removes the given role from all users that have it.",
+    description: "Removes the given roles from all users that have it.",
     execute(message, args) {
             if (!message.member.hasPermission("MANAGE_ROLES")) {
                 message.reply("sorry, you need the MANAGE_ROLES permission to use this command.").catch();
@@ -11,7 +11,7 @@ module.exports = {
             }
 
             if (args.length == 0) {
-                message.channel.send("Incorrect syntax! Correct syntax: f!clearrole [role mention]"
+                message.channel.send("Incorrect syntax! Correct syntax: f!clearroles [list of roles]"
                 ).catch();
                 return;
             }
@@ -36,7 +36,7 @@ module.exports = {
                     user.roles
                         .remove(role)
                         .then(() => {
-                            message.channel.send(`The role ${role.name} removed successfully from user ${user.user.tag}`).catch()
+                            message.channel.send(`Role ${role.name} removed successfully from user ${user.user.tag}`).catch()
                         })
                         .catch((err) => {
                             message.channel.send("Could not clear a role given, so skipping over it. Please check my permissions and try again.").catch();

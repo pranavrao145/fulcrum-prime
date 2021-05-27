@@ -1,4 +1,4 @@
-const {getRoleFromMention} = require("../utils");
+const { getRoleFromMention } = require("../utils");
 
 module.exports = {
     name: "clear_voice_channel",

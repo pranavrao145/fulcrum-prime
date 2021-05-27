@@ -1,4 +1,4 @@
-const {getRoleFromMention} = require("../utils");
+const { getRoleFromMention } = require("../utils");
 
 module.exports = {
     name: "move_voice_channel",

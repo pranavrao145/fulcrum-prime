@@ -40,7 +40,7 @@ module.exports = {
                             `Role ${role.name} successfully added to ${user.user.tag}`
                         ).catch();
                     })
-                    .catch((err) => {
+                    .catch(() => {
                         message.channel.send("A user supplied was invalid, so skipping over them.").catch();
                         
                         return;

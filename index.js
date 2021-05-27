@@ -47,7 +47,7 @@ client.on("ready", () => {
     client.commands.get("update_vcroles").execute(null, client);
 });
 
-client.login(process.env.BOT_TOKEN).catch((e) => {
+client.login(process.env.BOT_TOKEN).catch(() => {
     throw err;
 });
 
@@ -131,17 +131,17 @@ client.on("message", (message) => {
         client.commands.get("services").execute(message);
     } else if (command === "update" || command === "ud") {
         client.commands.get("update").execute(message, args, client, con);
-    } else if (command === "createrole" || command == "cr") {
+    } else if (command === "createrole" || command === "cr") {
         client.commands.get("create_role").execute(message, args);
-    } else if (command === "createroles" || command == "crs") {
+    } else if (command === "createroles" || command === "crs") {
         client.commands.get("create_roles").execute(message, args);
-    } else if (command === "deleteroles" || command == "dr") {
+    } else if (command === "deleteroles" || command === "dr") {
         client.commands.get("delete_roles").execute(message, args);
-    } else if (command === "assignrole" || command == "ar") {
+    } else if (command === "assignrole" || command === "ar") {
         client.commands.get("assign_role").execute(message, args);
-    } else if (command === "removerole" || command == "rr") {
+    } else if (command === "removerole" || command === "rr") {
         client.commands.get("remove_role").execute(message, args);
-    } else if (command === "clearroles" || command == "clr") {
+    } else if (command === "clearroles" || command === "clr") {
         client.commands.get("clear_roles").execute(message, args);
     } else if (command === "assignroles" || command === "ars") {
         client.commands.get("assign_roles").execute(message, args);
@@ -169,25 +169,25 @@ client.on("message", (message) => {
 client.on("guildMemberAdd", (channel) => {
     client.commands
         .get("update_member_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("guildMemberRemove", (channel) => {
     client.commands
         .get("update_member_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("channelCreate", (channel) => {
     client.commands
         .get("update_channel_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("channelDelete", (channel) => {
     client.commands
         .get("update_channel_count")
-        .execute(channel.guild, null, client, con);
+        .execute(channel.guild, null, con);
 });
 
 client.on("guildCreate", (guild) => {
@@ -202,4 +202,12 @@ client.on("guildCreate", (guild) => {
         channel.send("Join our support server: https://discord.com/invite/gR59PU2ufS").catch();
         channel.send("If you like the bot, please consider upvoting: https://top.gg/bot/827156281164955679").catch();
     }
+})
+
+client.on("rateLimit", (limit) => {
+    console.log(limit.timeout);
+    console.log(limit.limit);
+    console.log(limit.method);
+    console.log(limit.path);
+    console.log(limit.route);
 })

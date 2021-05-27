@@ -15,7 +15,7 @@ module.exports = {
         let userMention = args.shift();
 
         if (!userMention || !args[0]) {
-            message.channel.send("Incorrect syntax! Correct syntax: f!assignroles [user] [list of roles]").catch();
+            message.channel.send("Incorrect syntax! Correct syntax: f!removeroles [user] [list of roles]").catch();
             return;
         }
 
@@ -36,7 +36,7 @@ module.exports = {
 
             member.roles.remove(role).then(() => {
                 message.channel.send(`Role ${role.name} successfully removed from ${member.user.tag}`).catch();            
-            }).catch((err) => {
+            }).catch(() => {
                 message.channel.send("There was an error in removing a role. Please check my permissions and try again.").catch();
 
             });

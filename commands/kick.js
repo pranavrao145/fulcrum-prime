@@ -1,4 +1,4 @@
-const { getRoleFromMention, getUserFromMention } = require("../utils");
+const { getUserFromMention } = require("../utils");
 
 module.exports = {
     name: "kick",
