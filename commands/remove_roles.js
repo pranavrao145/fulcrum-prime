@@ -15,7 +15,7 @@ module.exports = {
         let userMention = args.shift();
 
         if (!userMention || !args[0]) {
-            message.channel.send("Incorrect syntax! Correct syntax: f!assignroles [user] [list of roles]").catch();
+            message.channel.send("Incorrect syntax! Correct syntax: f!removeroles [user] [list of roles]").catch();
             return;
         }
 
