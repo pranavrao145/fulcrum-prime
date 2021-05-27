@@ -33,8 +33,8 @@ module.exports = {
                     if (!mem.voice.channel || mem.voice.channel.id !== channel.id) {
                         mem.roles.remove(role).then(() => {
                             console.log("VC role updated.");
-                        }).catch((err) => {
-                            console.log(err);
+                        }).catch(() => {
+                            console.log(`Error updating voice channel roles in guild ${role.guild.name}.`);
                         })
                     }
                 })
