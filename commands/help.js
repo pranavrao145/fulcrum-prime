@@ -144,7 +144,7 @@ module.exports = {
                             "Alias: cc\nCreates a channel with a name, and optional type and permissions specified. By default, the value for type will be 'text', but you can change it by specifically passing 'voice'. Similarly, the permission for the channel will be public by default, but you can explicitly pass private to make the channel invisible to the @everyone role.",
                     },
                     {
-                        name: "deletechannel [channel mention (vc role for voice channels)]",
+                        name: "deletechannels [channel mentions (vc roles for voice channels)]",
                         value:
                             "Alias: dc\nDeletes the channel specified.",
                     },
