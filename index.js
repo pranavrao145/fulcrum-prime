@@ -161,6 +161,8 @@ client.on("message", (message) => {
         client.commands.get("create_channel").execute(message, args);
     } else if (command === "deletechannel" || command === "dc") {
         client.commands.get("delete_channels").execute(message, args);
+    } else if (command === "leavevoice" || command === "leave" || command === "lv") {
+        client.commands.get("leave_voice").execute(message);
     }
 });
 
