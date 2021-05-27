@@ -8,7 +8,8 @@ module.exports = {
             "Jan",
             "Feb",
             "Mar",
-            "Apr", "May",
+            "Apr", 
+            "May",
             "Jun",
             "Jul",
             "Aug",
@@ -25,7 +26,8 @@ module.exports = {
             "Wednesday",
             "Thursday",
             "Friday",
-            "Saturday", ];
+            "Saturday", 
+        ];
 
         if (message !== null) {
             if (!message.member.hasPermission("ADMINISTRATOR")) {
@@ -44,15 +46,14 @@ module.exports = {
 
                            if (row) {
                                vc = guild.channels.cache.get(row.channelid);
-                           } else {
-                               console.log("no row");
                            }
 
                            if (!vc) {
                                message.channel.send("Sorry, date channel feature not set up on this server. An admin can run f!integrate datechannel [voice_channel_role] to set this feature up.").catch()
                            } else {
                                let date = new Date();
-                               vc.setName(
+                               let vcName = vc.name;
+                               let toBeSetName =   
                                    "📅|" +
                                    days[date.getDay()] +
                                    ", " +
@@ -60,9 +61,16 @@ module.exports = {
                                    " " +
                                    date.getDate() +
                                    ", " +
-                                   date.getFullYear()
-                               ).catch();
-                               message.channel.send("Date updated successfully.").catch();
+                                   date.getFullYear();
+                                
+                               if (!vcName !== toBeSetName) {
+                                   vc.setName(toBeSetName).catch();
+                                   message.channel.send("Date updated successfully.").catch();
+                                   console.log("Date update triggered.")
+                               }
+                               else {
+                                   message.channel.send("Date updated successfully.").catch();
+                               }
                            }
                        })
             return;
@@ -86,7 +94,8 @@ module.exports = {
                            }
 
                            if (vc) {
-                               vc.setName(
+                               let vcName = vc.name;
+                               let toBeSetName =   
                                    "📅|" +
                                    days[date.getDay()] +
                                    ", " +
@@ -94,8 +103,13 @@ module.exports = {
                                    " " +
                                    date.getDate() +
                                    ", " +
-                                   date.getFullYear()
-                               ).then(() => console.log("Date updated successfully.")).catch();
+                                   date.getFullYear();
+                                
+                               if (!vcName !== toBeSetName) {
+                                   vc.setName(toBeSetName).then(c => {
+                                    console.log(`Date updated successfully in ${c.guild.name}.`)
+                                   }).catch();
+                               }
                            }
                        })
         });
