@@ -43,8 +43,6 @@ client.on("ready", () => {
     schedule.scheduleJob("0 0 * * *", function () {
         client.commands.get("update_date").execute(null, client, con);
     }); // run everyday at midnight
-
-    client.commands.get("update_vcroles").execute(null, client);
 });
 
 client.login(process.env.BOT_TOKEN).catch(() => {
@@ -205,9 +203,5 @@ client.on("guildCreate", (guild) => {
 })
 
 client.on("rateLimit", (limit) => {
-    console.log(limit.timeout);
-    console.log(limit.limit);
-    console.log(limit.method);
-    console.log(limit.path);
-    console.log(limit.route);
+    console.log(limit);
 })
