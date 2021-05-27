@@ -20,7 +20,7 @@ module.exports = {
                 let role = getRoleFromMention(message, mention);
 
                 if (!role) {
-                    message.channel.send("Could not clear a role given, Skipping over it.").catch();
+                    message.channel.send("Could not clear a role given, skipping over it.").catch();
                     return;
                 }
 
@@ -36,10 +36,10 @@ module.exports = {
                     user.roles
                         .remove(role)
                         .then(() => {
-                            message.channel.send(`The role ${role.name} removed successfully from user ${user.user.tag}`).catch()
+                            message.channel.send(`Role ${role.name} removed successfully from user ${user.user.tag}`).catch()
                         })
                         .catch(() => {
-                            message.channel.send("Could not clear a role given, Skipping over it.").catch();
+                            message.channel.send("Could not clear a role given, skipping over it.").catch();
                             return;
                         });
                 });

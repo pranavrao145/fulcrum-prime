@@ -131,17 +131,17 @@ client.on("message", (message) => {
         client.commands.get("services").execute(message);
     } else if (command === "update" || command === "ud") {
         client.commands.get("update").execute(message, args, client, con);
-    } else if (command === "createrole" || command == "cr") {
+    } else if (command === "createrole" || command === "cr") {
         client.commands.get("create_role").execute(message, args);
-    } else if (command === "createroles" || command == "crs") {
+    } else if (command === "createroles" || command === "crs") {
         client.commands.get("create_roles").execute(message, args);
-    } else if (command === "deleteroles" || command == "dr") {
+    } else if (command === "deleteroles" || command === "dr") {
         client.commands.get("delete_roles").execute(message, args);
-    } else if (command === "assignrole" || command == "ar") {
+    } else if (command === "assignrole" || command === "ar") {
         client.commands.get("assign_role").execute(message, args);
-    } else if (command === "removerole" || command == "rr") {
+    } else if (command === "removerole" || command === "rr") {
         client.commands.get("remove_role").execute(message, args);
-    } else if (command === "clearroles" || command == "clr") {
+    } else if (command === "clearroles" || command === "clr") {
         client.commands.get("clear_roles").execute(message, args);
     } else if (command === "assignroles" || command === "ars") {
         client.commands.get("assign_roles").execute(message, args);
