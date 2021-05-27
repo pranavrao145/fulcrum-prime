@@ -46,6 +46,11 @@ module.exports = {
                             "Alias: rw\nGenerates the amount of random words specified. Not specifying a number will generate one word.",
                     },
                     {
+                        name: "leavevoice",
+                        value:
+                            "Alias: lv, leave\nMakes user leave the voice channel they are currently in.",
+                    },
+                    {
                         name: "supportserver",
                         value:
                             "Alias: ss\nDisplays the link for the Fulcrum Prime Support Server.",
@@ -144,7 +149,7 @@ module.exports = {
                             "Alias: cc\nCreates a channel with a name, and optional type and permissions specified. By default, the value for type will be 'text', but you can change it by specifically passing 'voice'. Similarly, the permission for the channel will be public by default, but you can explicitly pass private to make the channel invisible to the @everyone role.",
                     },
                     {
-                        name: "deletechannel [channel mention (vc role for voice channels)]",
+                        name: "deletechannels [channel mentions (vc roles for voice channels)]",
                         value:
                             "Alias: dc\nDeletes the channel specified.",
                     },

@@ -28,7 +28,7 @@ module.exports = {
                 let role = getRoleFromMention(message, roleMention);
 
                 if (!role) {
-                    message.channel.send("A role supplied was invalid. Skipping over it.").catch();
+                    message.channel.send("A role supplied was invalid, so skipping over it.").catch();
                     return;
                 }
 
