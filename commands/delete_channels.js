@@ -10,7 +10,8 @@ module.exports = {
         }
 
         if (args.length === 0) {
-            message.channel.send("Invalid syntax! Correct syntax: f!deletechannel [channel mentions (vc roles for voice channels)]")
+            message.channel.send("Invalid syntax! Correct syntax: f!deletechannel [channel mentions (vc roles for voice channels)]").catch();
+            return;
         }
 
         args.forEach(mention => {
