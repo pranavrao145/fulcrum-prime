@@ -201,3 +201,11 @@ client.on("guildCreate", (guild) => {
         channel.send("If you like the bot, please consider upvoting: https://top.gg/bot/827156281164955679").catch();
     }
 })
+
+client.on("rateLimit", (limit) => {
+    console.log(limit.timeout);
+    console.log(limit.limit);
+    console.log(limit.method);
+    console.log(limit.path);
+    console.log(limit.route);
+})
