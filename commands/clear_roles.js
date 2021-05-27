@@ -38,7 +38,7 @@ module.exports = {
                         .then(() => {
                             message.channel.send(`Role ${role.name} removed successfully from user ${user.user.tag}`).catch()
                         })
-                        .catch((err) => {
+                        .catch(() => {
                             message.channel.send("Could not clear a role given, so skipping over it. Please check my permissions and try again.").catch();
                             return;
                         });
