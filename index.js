@@ -45,7 +45,7 @@ client.on("ready", () => {
     }); // run everyday at midnight
 });
 
-client.login(process.env.BOT_TOKEN).catch(() => {
+client.login(process.env.BOT_TOKEN).catch((err) => {
     throw err;
 });
 
