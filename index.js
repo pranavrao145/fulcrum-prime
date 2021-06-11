@@ -197,7 +197,7 @@ client.on("guildCreate", (guild) => {
         client.commands.get("start").execute(null, channel);
 
         channel.send("**IMPORTANT:** Given that Fulcrum Prime offers a variety of admin tools, please **ensure my role is above any role you want me to modify, and that I can view and manage all channels you want me managing.** Otherwise, my features will not work properly.").catch();
-        channel.send("Join our support server: https://discord.com/invite/gR59PU2ufS").catch();
+        channel.send("Join our support server: https://discord.gg/Yh4mkr88Hc").catch();
         channel.send("If you like the bot, please consider upvoting: https://top.gg/bot/827156281164955679").catch();
     }
 })
